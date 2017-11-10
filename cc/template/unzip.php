@@ -1,6 +1,6 @@
 <?php 
 include ("../bd.php");
-
+mysqli_set_charset($link, "utf8");
 // Создание шаблона (разархивирование)
 $set_dir = $_POST['set_dir'];
 $file = $_POST['file']; 
