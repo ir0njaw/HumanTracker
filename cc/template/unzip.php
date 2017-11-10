@@ -12,8 +12,6 @@ $title = mysqli_real_escape_string($link,$_POST['title']);
     $zip->extractTo($set_dir);
     $zip->close();
 
-//Создание записи в базе о используемом векторе для статистики
-    $query = mysqli_query($link,"INSERT INTO attacks_stats(attack_name, count) VALUES ('$title','0')");
 
 //Костыль, нужен для того, чтобы когда юзер введет креды, мы зафиксировали успешное действие и увеличили переменную count на 1 (в файле auth.php описано)
 if($title == "Outlook"){
@@ -124,8 +122,8 @@ elseif($title == "Установка антивируса"){
                     В ходе тестирования фиксировались три состояния: открытие письма, переход по ссылке, запуск вредоносного вложения.";
 }
 
-//Создание записи в базе, описывающие векторы (для отчета)
-    $query1 = mysqli_query($link,"UPDATE attacks_stats SET description = '$description' WHERE attack_name = '$title'");
+//Создание записи в базе о используемом векторе для статистики
+       $query = mysqli_query($link,"INSERT INTO attacks_stats(attack_name, count,description) VALUES ('$title','0','$description')");
 
 //Заменяем слово #attack_name в файле auth.php на $title
     $file_contents_auth = file_get_contents($set_dir_auth);
