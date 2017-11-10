@@ -171,6 +171,7 @@
 
 <?php
 include ('bd.php');
+mysqli_set_charset($link, "utf8");
 /* Браузеры */
 /* Chrome */
 $query = mysqli_query($link, "SELECT COUNT(*) FROM logs_visited WHERE ip IS NOT NULL AND ip <> '' AND login IS NOT NULL AND login <> '' AND user_agent IS NOT NULL AND user_agent <> '' AND referer IS NOT NULL AND referer <> '' AND time AND user_agent='Chrome'");
