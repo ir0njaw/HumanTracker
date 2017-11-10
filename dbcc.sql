@@ -1,14 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.10
+-- version 4.5.4.1deb2ubuntu2
 -- http://www.phpmyadmin.net
 --
--- Хост: localhost:3306
--- Время создания: Ноя 09 2017 г., 17:52
--- Версия сервера: 5.5.42
--- Версия PHP: 7.0.0
+-- Хост: localhost
+-- Время создания: Ноя 10 2017 г., 14:38
+-- Версия сервера: 5.7.20-0ubuntu0.16.04.1
+-- Версия PHP: 7.0.22-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- База данных: `dbcc`
@@ -21,11 +27,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `attacks_stats` (
-  `attack_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `count` varchar(255) NOT NULL,
+  `attack_name` varchar(255) CHARACTER SET cp1251 COLLATE cp1251_bin NOT NULL,
+  `count` varchar(255) CHARACTER SET cp1251 COLLATE cp1251_bin NOT NULL,
   `id` int(11) NOT NULL,
-  `description` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=cp1251;
+  `description` text CHARACTER SET cp1251 COLLATE cp1251_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=cp1251;
 
 -- --------------------------------------------------------
 
@@ -97,14 +103,7 @@ CREATE TABLE `replies` (
   `command_id` varchar(255) NOT NULL,
   `part_id` int(5) NOT NULL,
   `data` varchar(255) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `replies`
---
-
-INSERT INTO `replies` (`id`, `client_id`, `command_id`, `part_id`, `data`) VALUES
-(1, '', '', 0, '');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -121,7 +120,7 @@ CREATE TABLE `tasks` (
   `status` int(11) NOT NULL,
   `argument_human` varchar(255) NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -142,15 +141,15 @@ CREATE TABLE `template` (
 --
 
 INSERT INTO `template` (`filename`, `filename_logo`, `zip`, `dir`, `description`) VALUES
-('Яндекс.Диск.jpg', 'Яндекс.Диск_logo.jpg', 'Яндекс.Диск.zip', 'Яндекс.Диск/', '5'),
-('Обновление VPN.jpg', 'Обновление VPN_logo.jpg', 'Обновление VPN.zip', 'Обновление VPN/', '213'),
+('Ð¯Ð½Ð´ÐµÐºÑ.Ð”Ð¸ÑÐº.jpg', 'Ð¯Ð½Ð´ÐµÐºÑ.Ð”Ð¸ÑÐº_logo.jpg', 'Ð¯Ð½Ð´ÐµÐºÑ.Ð”Ð¸ÑÐº.zip', 'Ð¯Ð½Ð´ÐµÐºÑ.Ð”Ð¸ÑÐº/', '5'),
+('ÐžÐ±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ VPN.jpg', 'ÐžÐ±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ VPN_logo.jpg', 'ÐžÐ±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ VPN.zip', 'ÐžÐ±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ VPN/', '213'),
 ('Outlook.jpg', 'Outlook_logo.jpg', 'Outlook.zip', 'Outlook/', '123'),
-('Яндекс.Паспорт.jpg', 'Яндекс.Паспорт_logo.jpg', 'Яндекс.Паспорт.zip', 'Яндекс.Паспорт/', '123'),
-('Проверка пароля.jpg', 'Проверка пароля_logo.jpg', 'Проверка пароля.zip', 'Проверка пароля/', ''),
-('Вебинар.jpg', 'Вебинар_logo.jpg', 'Вебинар.zip', 'Вебинар/', '234'),
-('Установка антивируса.jpg', 'Установка антивируса_logo.jpg', 'Установка антивируса.zip', 'Установка антивируса/', '123'),
-('Перерасчет ЗП.jpg', 'Перерасчет ЗП_logo.jpg', 'Перерасчет ЗП.zip', 'Перерасчет ЗП/', '123'),
-('Премия.jpg', 'Премия_logo.jpg', 'Премия.zip', 'Премия/', '123');
+('Ð¯Ð½Ð´ÐµÐºÑ.ÐŸÐ°ÑÐ¿Ð¾Ñ€Ñ‚.jpg', 'Ð¯Ð½Ð´ÐµÐºÑ.ÐŸÐ°ÑÐ¿Ð¾Ñ€Ñ‚_logo.jpg', 'Ð¯Ð½Ð´ÐµÐºÑ.ÐŸÐ°ÑÐ¿Ð¾Ñ€Ñ‚.zip', 'Ð¯Ð½Ð´ÐµÐºÑ.ÐŸÐ°ÑÐ¿Ð¾Ñ€Ñ‚/', '123'),
+('ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð¿Ð°Ñ€Ð¾Ð»Ñ.jpg', 'ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð¿Ð°Ñ€Ð¾Ð»Ñ_logo.jpg', 'ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð¿Ð°Ñ€Ð¾Ð»Ñ.zip', 'ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð¿Ð°Ñ€Ð¾Ð»Ñ/', ''),
+('Ð’ÐµÐ±Ð¸Ð½Ð°Ñ€.jpg', 'Ð’ÐµÐ±Ð¸Ð½Ð°Ñ€_logo.jpg', 'Ð’ÐµÐ±Ð¸Ð½Ð°Ñ€.zip', 'Ð’ÐµÐ±Ð¸Ð½Ð°Ñ€/', '234'),
+('Ð£ÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ð°Ð½Ñ‚Ð¸Ð²Ð¸Ñ€ÑƒÑÐ°.jpg', 'Ð£ÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ð°Ð½Ñ‚Ð¸Ð²Ð¸Ñ€ÑƒÑÐ°_logo.jpg', 'Ð£ÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ð°Ð½Ñ‚Ð¸Ð²Ð¸Ñ€ÑƒÑÐ°.zip', 'Ð£ÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° Ð°Ð½Ñ‚Ð¸Ð²Ð¸Ñ€ÑƒÑÐ°/', '123'),
+('ÐŸÐµÑ€ÐµÑ€Ð°ÑÑ‡ÐµÑ‚ Ð—ÐŸ.jpg', 'ÐŸÐµÑ€ÐµÑ€Ð°ÑÑ‡ÐµÑ‚ Ð—ÐŸ_logo.jpg', 'ÐŸÐµÑ€ÐµÑ€Ð°ÑÑ‡ÐµÑ‚ Ð—ÐŸ.zip', 'ÐŸÐµÑ€ÐµÑ€Ð°ÑÑ‡ÐµÑ‚ Ð—ÐŸ/', '123'),
+('ÐŸÑ€ÐµÐ¼Ð¸Ñ.jpg', 'ÐŸÑ€ÐµÐ¼Ð¸Ñ_logo.jpg', 'ÐŸÑ€ÐµÐ¼Ð¸Ñ.zip', 'ÐŸÑ€ÐµÐ¼Ð¸Ñ/', '123');
 
 -- --------------------------------------------------------
 
@@ -201,14 +200,17 @@ ALTER TABLE `tasks`
 -- AUTO_INCREMENT для таблицы `attacks_stats`
 --
 ALTER TABLE `attacks_stats`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `replies`
 --
 ALTER TABLE `replies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT для таблицы `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
