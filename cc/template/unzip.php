@@ -1,5 +1,5 @@
 <?php 
-include ("/Applications/MAMP/htdocs/admin/cc/bd.php");
+include ("../bd.php");
 
 // Создание шаблона (разархивирование)
 $set_dir = $_POST['set_dir'];
