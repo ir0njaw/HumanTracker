@@ -165,7 +165,7 @@
                           
                         $content = "<li>$title
                                 <a href='$file' data-largesrc='$preview' data-title='$title' data-description='$description'>
-                                    <img src='$logotip' height='180px' width='180px' />
+                                    <img  src='$logotip' height='180px' width='180px' />
                                 </a>
                                 <form action='unzip.php' method='post'>
                                 <input style='height: 24px;padding: 2px 12px;font-size: 12px;color: #555;border: 1px solid #ccc;border-radius: 4px;' type='text' name='set_dir' placeholder='Куда распаковать?'>
@@ -195,9 +195,9 @@
                           $file = $dir.$zip;
                           $title = str_replace("/", "", $dir);
                           $content = "
-                                    <li>$title
+                                    <li id='hta'>$title
                                 <a href='$file' data-largesrc='$preview' data-title='$title' data-description='$description'>
-                                    <img src='$logotip' height='180px' width='180px' />
+                                    <img class='img_hta' src='$logotip' height='180px' width='180px' />
                                 </a>
                                 <form action='unzip.php' method='post'>
                                 <input style='height: 24px;padding: 2px 12px;font-size: 12px;color: #555;border: 1px solid #ccc;border-radius: 4px;' type='text' name='set_dir' placeholder='Куда распаковать?'>
@@ -226,9 +226,9 @@
                           $file = $dir.$zip;
                           $title = str_replace("/", "", $dir);
                           $content = "
-                                    <li>$title
+                                    <li id='hta'>$title
                                 <a href='$file' data-largesrc='$preview' data-title='$title' data-description='$description'>
-                                    <img src='$logotip' height='180px' width='180px' />
+                                    <img class='img_usb' src='$logotip' height='180px' width='180px' />
                                 </a>
                                 <form action='unzip.php' method='post'>
                                 <input style='height: 24px;padding: 2px 12px;font-size: 12px;color: #555;border: 1px solid #ccc;border-radius: 4px;' type='text' name='set_dir' placeholder='Куда распаковать?'>
@@ -257,7 +257,7 @@
                           $file = $dir.$zip;
                           $title = str_replace("/", "", $dir);
                           $content = "
-                                    <li>$title
+                                    <li id='hta'>$title
                                 <a href='$file' data-largesrc='$preview' data-title='$title' data-description='$description'>
                                     <img src='$logotip' height='180px' width='180px' />
                                 </a>
@@ -277,9 +277,6 @@
                   }
                   echo "</ul>";
                     ?>       
-                    
-                           
-                    
                         
                     </div>
                     </div>
@@ -303,12 +300,19 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/grid.js"></script>
-    <script>
+<script>
             $(function() {
                 Grid.init();
             });
-        </script>
-
+</script>
+    
+<script type="text/javascript">
+$(document).ready(function(){
+        $("img").click(function() {
+            $("#hta, #usb, #makros").css("height","250px");
+            $( ".og-expander" ).remove();
+        });
+});
 </body>
 
 </html>
