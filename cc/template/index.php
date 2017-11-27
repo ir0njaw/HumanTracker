@@ -313,6 +313,7 @@ $(document).ready(function(){
             $( ".og-expander" ).remove();
         });
 });
+    </script>
 </body>
 
 </html>
