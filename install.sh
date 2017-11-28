@@ -5,9 +5,13 @@ sudo a2enmod rewrite
 sudo service apache2 restart
 echo 'q:$apr1$4y1jPCH.$oNzkDf/th.BOzQ3DbpWfM/' > /var/www/.htpasswd
 cd ../ && mv EasySocial /var/www/html/admin && cd /var/www/html/admin  
+echo "///////////////////////////////"
 echo "ENTER DATABASE USER NAME:"
+echo "///////////////////////////////"
 read dbuser
+echo "///////////////////////////////"
 echo "ENTER DATASE PASSWORD:"
+echo "///////////////////////////////"
 read dbpassword
 mysql -u $dbuser -p$dbpassword -e "CREATE DATABASE dbcc"
 echo "CREATE DATASE dbcc -> Done"
