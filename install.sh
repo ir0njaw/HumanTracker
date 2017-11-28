@@ -17,4 +17,10 @@ rm /var/www/html/admin/install.sh
 rm /var/www/html/admin/dbcc.sql
 sudo chmod -R 757 /var/www
 echo "FuckHumans has been successfully installed!!!"
-nano /var/www/html/admin2/cc/bd.php
+read -p "If the password from the database != 'root' then you need to change config file, ok?" -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    nano /var/www/html/admin/cc/bd.php
+fi
+
