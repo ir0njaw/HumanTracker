@@ -16,13 +16,13 @@ mysql -u $dbuser -p$dbpassword dbcc < dbcc.sql
 rm /var/www/html/admin/install.sh
 rm /var/www/html/admin/dbcc.sql
 sudo chmod -R 757 /var/www
-echo ""
+echo "///////////////////////////////"
 read -r -p "If the password from the database != 'root' then you need to change config file, ok? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
 then
     nano /var/www/html/admin/cc/bd.php
 fi
-
-
+echo "///////////////////////////////"
+echo ""
 echo "FuckHumans has been successfully installed!!!"
 
