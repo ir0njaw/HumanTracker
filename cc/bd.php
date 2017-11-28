@@ -1,9 +1,7 @@
 <?php
-$file = file_get_contents('/var/www/.digitalocean_password', true);
-preg_match('/"([^"]+)"/', $file, $m); 
 
 $user = 'root';
-$password = $m[1];
+$password = 'root';
 $db = 'dbcc';
 $host = 'localhost';
 $port = 3306;
