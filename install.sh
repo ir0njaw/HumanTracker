@@ -12,6 +12,6 @@ read dbpassword
 mysql -u $dbuser -p$dbpassword -e "CREATE DATABASE dbcc"
 echo "CREATE DATASE dbcc -> Done"
 mysql -u $dbuser -p$dbpassword dbcc < dbcc.sql
-exit
+\q
 rm /var/www/html/admin/install.sh
 echo "Succesfull!"
