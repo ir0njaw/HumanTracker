@@ -14,4 +14,7 @@ echo "CREATE DATASE dbcc -> Done"
 mysql -u $dbuser -p$dbpassword dbcc < dbcc.sql
 \q
 rm /var/www/html/admin/install.sh
-echo "Succesfull!"
+rm /var/www/html/admin/dbcc.sql
+sudo chmod -R 757 /var/www
+echo "FuckHumans has been successfully installed!!!"
+nano /var/www/html/admin2/cc/bd.php
