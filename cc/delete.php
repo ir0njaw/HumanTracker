@@ -5,7 +5,7 @@ if(isset($_GET['user'])){$client_id = $_GET['user'];}
 
 if($id =='1'){
         $query = mysqli_query($link, "DELETE FROM tasks WHERE client_id=$client_id");
-        header('Location: ../hta/');
+        header('Location: hta/');
 }
 elseif($id =='2'){
         $query = mysqli_query($link, "TRUNCATE logs_visited");
