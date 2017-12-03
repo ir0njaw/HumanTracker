@@ -45,7 +45,7 @@ CREATE TABLE `logs_common` (
   `first_stage` varchar(255) NOT NULL,
   `second_stage` varchar(255) NOT NULL,
   `third_stage` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=cp1251;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
