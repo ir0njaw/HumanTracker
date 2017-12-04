@@ -1,7 +1,6 @@
 #!/bin/bash
 
 apt-get update
-apt-get -y install git
 apt-get -y install build-essential libssl-dev libffi-dev python3-dev 
 apt-get -y install python3-pip 
 python3.4 -m pip install --upgrade setuptools
