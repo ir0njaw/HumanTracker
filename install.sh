@@ -14,9 +14,9 @@ echo "///////////////////////////////"
 
 curl -s https://mailinabox.email/setup.sh | sudo bash
 curl -s https://mailinabox.email/setup.sh | sudo bash
+rm -rf mailinabox/
 apt-get -y install mysql-server
 apt-get -y install php5-fpm php5-mysql
-git clone https://github.com/ir0njaw/EasySocial.git && cd EasySocial
 mv local.conf /etc/nginx/conf.d/
 mv php.ini /etc/php5/fpm/
 echo 'root:$apr1$vGZ6JkMF$ZcoktoPQA92Ft.QBbC/Iv/' > /etc/nginx/.htpasswd
