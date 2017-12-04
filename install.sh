@@ -1,10 +1,41 @@
 #!/bin/bash
-sudo apt-get -y install lamp-server^
-sudo apt-get -y install php7.0-zip
-sudo a2enmod rewrite 
-sudo service apache2 restart
-echo 'q:$apr1$4y1jPCH.$oNzkDf/th.BOzQ3DbpWfM/' > /var/www/.htpasswd
-cd ../ && mv EasySocial /var/www/html/admin_cc && cd /var/www/html/admin_cc  
+
+apt-get update
+apt-get -y install git
+apt-get -y install build-essential libssl-dev libffi-dev python3-dev 
+apt-get -y install python3-pip 
+python3.4 -m pip install --upgrade setuptools
+python3.4 -m pip install cryptography 
+python3.4 -m pip install paramiko
+
+echo "///////////////////////////////"
+echo "Installation of Mailinabox"
+echo "///////////////////////////////"
+
+curl -s https://mailinabox.email/setup.sh | sudo bash
+curl -s https://mailinabox.email/setup.sh | sudo bash
+apt-get -y install mysql-server
+apt-get -y install php5-fpm php5-mysql
+git clone https://github.com/ir0njaw/EasySocial.git && cd EasySocial
+mv local.conf /etc/nginx/conf.d/
+mv php.ini /etc/php5/fpm/
+echo 'root:$apr1$vGZ6JkMF$ZcoktoPQA92Ft.QBbC/Iv/' > /etc/nginx/.htpasswd
+
+#Меняем servername конфига nginx
+host=`cat /etc/hostname | sed 's/box.//g'`
+echo $host
+perl -p -i -e 's/tador.men/'${host}'/g' /etc/nginx/conf.d/local.conf
+service nginx restart
+echo "///////////////////////////////"
+echo "Nginx config installed"
+echo "///////////////////////////////"
+echo ""
+
+echo "///////////////////////////////"
+echo "Installation of FuckHumans 1.0"
+echo "///////////////////////////////"
+
+cd ../ && mv EasySocial /home/user-data/www/default/admin && cd /home/user-data/www/default/admin
 echo "///////////////////////////////"
 echo "ENTER DATABASE USER NAME:"
 echo "///////////////////////////////"
@@ -16,16 +47,17 @@ read dbpassword
 mysql -u $dbuser -p$dbpassword -e "CREATE DATABASE dbcc"
 echo "CREATE DATASE dbcc -> Done"
 mysql -u $dbuser -p$dbpassword dbcc < dbcc.sql
-rm /var/www/html/admin_cc/install.sh
-rm /var/www/html/admin_cc/dbcc.sql
-sudo chmod -R 757 /var/www
+
+rm /home/user-data/www/default/admin/dbcc.sql
+rm /home/user-data/www/default/admin/install.sh
+sudo chmod -R 757 /home/user-data/www/default/
+
 echo "///////////////////////////////"
-read -r -p "If the password from the database != 'root' then you need to change config file, ok? [y/N] " response
+read -r -p "If the password from the database != 'root' -> change config file, ok? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
 then
-    nano /var/www/html/admin_cc/cc/bd.php
+    nano /home/user-data/www/default/admin/cc/bd.php
 fi
 echo "///////////////////////////////"
-echo ""
-echo "FuckHumans has been successfully installed!!!"
-
+echo "FuckHumans 1.0 has been successfully installed!!!"
+echo "///////////////////////////////"
