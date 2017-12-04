@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Ты не пройдешь"
-AuthUserFile /var/www/.htpasswd
-Require valid-user
