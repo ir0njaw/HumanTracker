@@ -17,8 +17,8 @@ $title = mysqli_real_escape_string($link,$_POST['title']);
 if($title == "Outlook"){
 	$set_dir_auth = $set_dir.'/owa/auth/auth.php';
     $set_dir_visited = $set_dir.'/owa/auth/visited.php';
-    $description = "Сценарий. Новый почтовый сервер. ".PHP_EOL."
-Отправитель: Имя Фамилия, email.
+    $description = "Сценарий. Новый почтовый сервер.
+    Отправитель: Имя Фамилия, email.
     Даты проведения атак: с 03.11.2016.
     Цель: получение учетных данных сотрудников.  
 
@@ -85,7 +85,8 @@ elseif($title == "Обновление VPN"){
                     В ходе тестирования фиксировались три состояния: открытие письма, переход по ссылке, запуск вредоносного вложения.";
 }
 elseif($title == "Перерасчет ЗП"){
-    $set_dir_visited = $set_dir.'/pereraschet/listok.php';
+    $set_dir_auth = $set_dir.'/pereraschet/listok.php';
+    $set_dir_visited = $set_dir.'/pereraschet/files/listok.php';
     $description = "Сценарий. Перерасчет З/П
                     Отправитель: Михаил Зеленцов, m.zelencov@passwordgpu.ru 
                     Даты проведения атак: с 03.11.2016. 
@@ -98,7 +99,8 @@ elseif($title == "Перерасчет ЗП"){
                     В ходе тестирования фиксировались три состояния: открытие письма, сохранение вложения, запуск макроса.";
 }
 elseif($title == "Премия"){
-    $set_dir_visited = $set_dir.'/premia/listok.php';
+    $set_dir_auth = $set_dir.'/premia/listok.php';
+    $set_dir_visited = $set_dir.'/premia/files/visited.php';
     $description = "Сценарий. Премия
                     тправитель: Михаил Зеленцов, m.zelencov@passwordgpu.ru 
                     Даты проведения атак: с 03.11.2016. 
