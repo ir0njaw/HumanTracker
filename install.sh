@@ -6,6 +6,10 @@ apt-get -y install python3-pip
 python3.4 -m pip install --upgrade setuptools
 python3.4 -m pip install cryptography 
 python3.4 -m pip install paramiko
+apt-get -y install python-dev python-setuptools
+apt-get -y install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk
+pip2 install openpyxl
+pip2 install pillow
 
 echo "///////////////////////////////"
 echo "Installation of Mailinabox"
@@ -16,6 +20,10 @@ curl -s https://mailinabox.email/setup.sh | sudo bash
 rm -rf mailinabox/
 apt-get -y install mysql-server
 apt-get -y install php5-fpm php5-mysql
+
+echo "///////////////////////////////"
+echo "replace nginx conf"
+pwd
 mv local.conf /etc/nginx/conf.d/
 mv php.ini /etc/php5/fpm/
 echo 'root:$apr1$vGZ6JkMF$ZcoktoPQA92Ft.QBbC/Iv/' > /etc/nginx/.htpasswd
