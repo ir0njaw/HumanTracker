@@ -81,6 +81,9 @@
                                 <a href="../template/">Готовые</a>
                             </li>
                             <li>
+                                <a href="../template/deployed.php">Развернутые шаблоны</a>
+                            </li>
+                            <li>
                                 <a href="../template/new.php">Загрузить новый</a>
                             </li>
                             <li>
