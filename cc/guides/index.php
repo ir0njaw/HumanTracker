@@ -65,10 +65,10 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="../"><i class="fa fa-fw fa-dashboard"></i> Статистика</a>
+                        <a href="../"><i class="fa fa-dashboard"></i> Статистика</a>
                     </li>
                     <li>
-                        <a href="../hta/"><i class="fa fa-fw fa-bug"></i> HTA</a>
+                        <a href="../hta/"><i class="fa fa-bug"></i> HTA</a>
                     </li>
                      <li>
                         <a href="../phishing/"><i class="fa fa-certificate"></i> Фишинг</a>
@@ -80,10 +80,13 @@
                         <a href="../usb/"><i class="fa fa-flag"></i> USB</a>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="glyphicon glyphicon-list-alt"></i> Шаблоны <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
+                        <a><i class="glyphicon glyphicon-list-alt"></i> Шаблоны </a>
+                        <ul id="demo">
                             <li>
                                 <a href="../template/">Готовые</a>
+                            </li>
+                            <li>
+                                <a href="../template/deployed.php">Развернутые шаблоны</a>
                             </li>
                             <li>
                                 <a href="../template/new.php">Загрузить новый</a>
@@ -94,8 +97,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="glyphicon glyphicon-file"></i> Создание отчета <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo1" class="collapse">
+                        <a ><i class="glyphicon glyphicon-file"></i> Создание отчета </a>
+                        <ul id="demo1">
                             <li>
                                 <a href="../report/">Создать отчет</a>
                             </li>
@@ -144,67 +147,58 @@
                         <div class="table-responsive">
                            <div class="footer"></div>
                             
-                            <div id='showmenu' style="font-size: 20px">1. Установка и настройка
+                            <div id='showmenu' style="font-size: 20px">1. Установка шаблона "Яндекс.Диск
                                 <div class='menu' style="display: none;">
-                                    <video width="320" height="240" controls>
-                                        <source src="video/1.mp4" type="video/mp4">
-                                    </video>
+                                    <iframe src="https://duma.corp.dsec.ru/download/attachments/10977328/yandex_disk.mp4?version=1&modificationDate=1512698489000&api=v2" allowfullscreen="true" width="500" height="300"></iframe> 
+                                    
                                 </div>
                              </div>
 
-                            <div id='showmenu2' style="margin-top: 10px;font-size: 20px">2.1. Установка шаблона "Outlook" <small style="color:grey">(фишинг)</small></h4>
+                            <div id='showmenu2' style="margin-top: 10px;font-size: 20px">2. Установка шаблона "Outlook" <small style="color:grey">(фишинг)</small></h4>
                                 <div class='menu2' style="display: none;">
-                                    <video width="320" height="240" controls>
-                                        <source src="video/1.mp4" type="video/mp4">
-                                    </video>
-                                </div>
-                            </div>      
-                          
-                            <div id='showmenu3' style="margin-top: 10px;font-size: 20px">2.2. Установка шаблона "Проверка пароля" <small style="color:grey">(фишинг)</small></h4>
-                                <div class='menu3' style="display: none;">
-                                    <video width="320" height="240" controls>
-                                        <source src="video/1.mp4" type="video/mp4">
-                                    </video>
+                                    <iframe src="https://duma.corp.dsec.ru/download/attachments/10977328/owa.mp4?version=2&modificationDate=1512698545000&api=v2" allowfullscreen="true" width="500" height="300"></iframe> 
                                 </div>
                             </div>
 
-                            <div id='showmenu4' style="margin-top: 10px;font-size: 20px">2.3. Установка шаблона "Яндекс.Диск" <small style="color:grey">(фишинг)</small></h4>
-                                <div class='menu4' style="display: none;">
-                                    <video width="320" height="240" controls>
-                                        <source src="video/1.mp4" type="video/mp4">
-                                    </video>
-                                </div>
-                            </div>
-
-                            <div id='showmenu5' style="margin-top: 10px;font-size: 20px">2.4. Установка шаблона "Яндекс.Паспорт" <small style="color:grey">(фишинг)</small></h4>
+                            <div id='showmenu5' style="margin-top: 10px;font-size: 20px">3. Установка шаблона "Яндекс.Паспорт" <small style="color:grey">(фишинг)</small></h4>
                                 <div class='menu5' style="display: none;">
-                                    <video width="320" height="240" controls>
-                                        <source src="video/1.mp4" type="video/mp4">
-                                    </video>
+                                    <iframe src="https://duma.corp.dsec.ru/download/attachments/10977328/yandex_passport.mp4?version=1&modificationDate=1512698620000&api=v2" allowfullscreen="true" width="500" height="300"></iframe> 
+                                </div>
+                            </div>        
+                          
+                            <div id='showmenu3' style="margin-top: 10px;font-size: 20px">4. Установка шаблона "Проверка пароля" <small style="color:grey">(фишинг)</small></h4>
+                                <div class='menu3' style="display: none;">
+                                    <iframe src="https://duma.corp.dsec.ru/download/attachments/10977328/webinar.mp4?version=1&modificationDate=1512698725000&api=v2" allowfullscreen="true" width="500" height="300"></iframe> 
                                 </div>
                             </div>
 
-                            <div id='showmenu6' style="margin-top: 10px;font-size: 20px">2.5. Установка шаблона "Вебинар" <small style="color:grey">(hta)</small></h4>
+                            <div id='showmenu6' style="margin-top: 10px;font-size: 20px">5. Установка шаблона "Вебинар" <small style="color:grey">(hta)</small></h4>
                                 <div class='menu6' style="display: none;">
-                                    <video width="320" height="240" controls>
-                                        <source src="video/1.mp4" type="video/mp4">
-                                    </video>
+                                   <iframe src="https://duma.corp.dsec.ru/download/attachments/10977328/webinar.mp4?version=1&modificationDate=1512698725000&api=v2" allowfullscreen="true" width="500" height="300"></iframe> 
                                 </div>
-                            </div>
+                            </div>                      
 
-                            <div id='showmenu7' style="margin-top: 10px;font-size: 20px">2.6. Установка шаблона "Обновление VPN" <small style="color:grey">(exe)</small></h4>
+                            <div id='showmenu7' style="margin-top: 10px;font-size: 20px">6. Установка шаблона "Обновление VPN" <small style="color:grey">(exe)</small></h4>
                                 <div class='menu7' style="display: none;">
-                                    <video width="320" height="240" controls>
-                                        <source src="video/1.mp4" type="video/mp4">
-                                    </video>
+                                    <iframe src="https://duma.corp.dsec.ru/download/attachments/10977328/openvpn.mp4?version=1&modificationDate=1512698878000&api=v2" allowfullscreen="true" width="500" height="300"></iframe> 
                                 </div>
                             </div>
 
-                            <div id='showmenu8' style="margin-top: 10px;font-size: 20px">2.7. Установка шаблона "Перерасчет ЗП" <small style="color:grey">(макросы)</small></h4>
+                            <div id='showmenu9' style="margin-top: 10px;font-size: 20px">7. Установка шаблона "Установка антивируса" <small style="color:grey">(exe)</small></h4>
+                                <div class='menu9' style="display: none;">
+                                    <iframe src="https://duma.corp.dsec.ru/download/attachments/10977328/avast.mp4?version=1&modificationDate=1512698965000&api=v2" allowfullscreen="true" width="500" height="300"></iframe> 
+                                </div>
+                            </div>
+
+                            <div id='showmenu8' style="margin-top: 10px;font-size: 20px">8. Установка шаблона "Перерасчет ЗП" <small style="color:grey">(макросы)</small></h4>
                                 <div class='menu8' style="display: none;">
-                                    <video width="320" height="240" controls>
-                                        <source src="video/1.mp4" type="video/mp4">
-                                    </video>
+                                    <iframe src="https://duma.corp.dsec.ru/download/attachments/10977328/pereraschet.mp4?version=1&modificationDate=1512699101000&api=v2" allowfullscreen="true" width="500" height="300"></iframe> 
+                                </div>
+                            </div>
+
+                            <div id='showmenu4' style="margin-top: 10px;font-size: 20px">9. Установка шаблона "Премия" <small style="color:grey">(макросы)</small></h4>
+                                <div class='menu4' style="display: none;">
+                                    <iframe src="https://duma.corp.dsec.ru/download/attachments/10977328/premia.mp4?version=1&modificationDate=1512699168000&api=v2" allowfullscreen="true" width="500" height="300"></iframe> 
                                 </div>
                             </div>
                                     
@@ -256,6 +250,9 @@
             });
         $('#showmenu8').click(function() {
                 $('.menu8').slideToggle("fast");
+            });
+        $('#showmenu9').click(function() {
+                $('.menu9').slideToggle("fast");
             });
     });
 </script>
