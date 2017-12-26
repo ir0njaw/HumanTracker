@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Гайды по настройке</title>
+    <title>Создание отчета</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -126,7 +126,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Гайды по настройке
+                            Создание отчета
                             
                         </h1>
                         <ol class="breadcrumb">
@@ -134,7 +134,7 @@
                                 <i class="fa fa-dashboard"></i>  <a href="../">Статистика</a>
                             </li>
                             <li class="active">
-                                <i class="glyphicon glyphicon-film"></i> Гайды по настройке
+                                <i class="glyphicon glyphicon-film"></i> Создание отчета
                             </li>
                         </ol>
          
