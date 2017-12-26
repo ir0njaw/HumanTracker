@@ -141,7 +141,7 @@
                         <div class="table-responsive">
                            <div class="footer"></div>
                             <h3>Описание</h3>
-                                <iframe src="http://138.68.92.20:8090/web/main.html" width="1150" height="750"></iframe>
+                                <iframe src="http://138.68.92.20:8090/web/main.html" width="100%" height="750"></iframe>
                         </div>
 <!-- /Таблица -->       </div>
                     </div>
