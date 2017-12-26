@@ -68,10 +68,10 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="../"><i class="fa fa-fw fa-dashboard"></i> Статистика</a>
+                        <a href="../"><i class="fa fa-dashboard"></i> Статистика</a>
                     </li>
                     <li>
-                        <a href="../hta/"><i class="fa fa-fw fa-bug"></i> HTA</a>
+                        <a href="../hta/"><i class="fa fa-bug"></i> HTA</a>
                     </li>
                      <li class="active">
                         <a href="../phishing/"><i class="fa fa-certificate"></i> Фишинг </a>
@@ -83,8 +83,8 @@
                         <a href="../usb/"><i class="fa fa-flag"></i> USB</a>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="glyphicon glyphicon-list-alt"></i> Шаблоны <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
+                        <a><i class="glyphicon glyphicon-list-alt"></i> Шаблоны</a>
+                        <ul id="demo">
                             <li>
                                 <a href="../template/">Готовые</a>
                             </li>
@@ -100,8 +100,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="glyphicon glyphicon-file"></i> Создание отчета <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo1" class="collapse">
+                        <a><i class="glyphicon glyphicon-file"></i> Создание отчета </a>
+                        <ul id="demo1">
                             <li>
                                 <a href="../report/">Создать отчет</a>
                             </li>
