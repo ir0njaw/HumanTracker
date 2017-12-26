@@ -168,7 +168,7 @@
                           
                             <div id='showmenu3' style="margin-top: 10px;font-size: 20px">4. Установка шаблона "Проверка пароля" <small style="color:grey">(фишинг)</small></h4>
                                 <div class='menu3' style="display: none;">
-                                    <iframe src="https://duma.corp.dsec.ru/download/attachments/10977328/webinar.mp4?version=1&modificationDate=1512698725000&api=v2" allowfullscreen="true" width="500" height="300"></iframe> 
+                                    <iframe src="https://duma.corp.dsec.ru/download/attachments/10977328/check.mp4?version=1&modificationDate=1514310812017&api=v2" allowfullscreen="true" width="500" height="300"></iframe> 
                                 </div>
                             </div>
 
