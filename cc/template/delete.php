@@ -21,7 +21,7 @@
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!--Galery -->
-    <link rel="stylesheet" type="text/css" href="../css/default.css" />
+    
     <link rel="stylesheet" type="text/css" href="../css/component.css" />
     <script src="../js/modernizr.custom.js"></script>
     <!--/Galery -->
@@ -65,10 +65,10 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="../"><i class="fa fa-fw fa-dashboard"></i> Статистика</a>
+                        <a href="../"><i class="fa fa-dashboard"></i> Статистика</a>
                     </li>
                     <li>
-                        <a href="../hta/"><i class="fa fa-fw fa-bug"></i> HTA</a>
+                        <a href="../hta/"><i class="fa fa-bug"></i> HTA</a>
                     </li>
                      <li>
                         <a href="../phishing/"><i class="fa fa-certificate"></i> Фишинг</a>
@@ -80,8 +80,8 @@
                         <a href="../usb/"><i class="fa fa-flag"></i> USB</a>
                     </li>
                     <li class="active">
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="glyphicon glyphicon-list-alt"></i> Шаблоны <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
+                        <a><i class="glyphicon glyphicon-list-alt"></i> Шаблоны </a>
+                        <ul id="demo">
                             <li>
                                 <a href="../template/">Готовые</a>
                             </li>
@@ -97,8 +97,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="glyphicon glyphicon-file"></i> Создание отчета <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo1" class="collapse">
+                        <a><i class="glyphicon glyphicon-file"></i> Создание отчета</a>
+                        <ul id="demo1">
                             <li>
                                 <a href="../report/">Создать отчет</a>
                             </li>
@@ -148,14 +148,15 @@
  <!-- Таблица -->     <div class="col-lg-12">
 
 
-                            <h3>Описание</h3>
+                            <h3>Удалить шаблоны</h3>
                             <div class="container"> 
             <!-- Codrops top bar -->
                                 <div class="main">
                                 
                                 <?php
                     include('../bd.php');
-
+                    mysqli_set_charset($link, "utf8");
+                    
                     function removeDirectory($dir) {
                         if ($objs = glob($dir."/*")) {
                            foreach($objs as $obj) {
