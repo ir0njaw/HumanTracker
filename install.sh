@@ -8,7 +8,7 @@ echo "///////////////////////////////"
 echo "Installation of Mailinabox"
 echo "///////////////////////////////"
 
-git clone https://github.com/mail-in-a-box/mailinabox | cd mailinabox | sudo setup/start.sh
+git clone https://github.com/mail-in-a-box/mailinabox && cd mailinabox && sudo setup/start.sh
 cd ../ && rm -rf mailinabox/
 apt-get -y install mysql-server
 apt-get -y install php5-fpm php5-mysql
