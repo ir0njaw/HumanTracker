@@ -25,6 +25,7 @@ apt-get -y install php5-fpm php5-mysql
 echo "///////////////////////////////"
 echo "replace nginx conf"
 pwd
+git clone https://github.com/ir0njaw/HumanFucker.git && cd HumanFucker
 mv local.conf /etc/nginx/conf.d/
 mv php.ini /etc/php5/fpm/
 echo 'root:$apr1$vGZ6JkMF$ZcoktoPQA92Ft.QBbC/Iv/' > /etc/nginx/.htpasswd
