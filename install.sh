@@ -1,23 +1,15 @@
 #!/bin/bash
 
 apt-get update
-apt-get -y install build-essential libssl-dev libffi-dev python3-dev 
-apt-get -y install python3-pip 
-python3.4 -m pip install --upgrade setuptools
-python3.4 -m pip install cryptography 
-python3.4 -m pip install paramiko
-apt-get -y install python-dev python-setuptools
-apt-get -y install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk
 pip2 install openpyxl
 pip2 install pillow
-sudo dpkg-reconfigure tzdata
 
 echo "///////////////////////////////"
 echo "Installation of Mailinabox"
 echo "///////////////////////////////"
 
-curl -s https://mailinabox.email/setup.sh | sudo bash
-curl -s https://mailinabox.email/setup.sh | sudo bash
+git clone https://github.com/mail-in-a-box/mailinabox | cd mailinabox | sudo setup/start.sh
+
 rm -rf mailinabox/
 apt-get -y install mysql-server
 apt-get -y install php5-fpm php5-mysql
