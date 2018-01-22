@@ -1,6 +1,5 @@
 #!/bin/bash
 
-apt-get update
 pip2 install openpyxl
 pip2 install pillow
 
