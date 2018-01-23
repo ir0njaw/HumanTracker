@@ -126,6 +126,7 @@ elseif($title == "Установка антивируса"){
 
 //Создание записи в базе о используемом векторе для статистики
        $query = mysqli_query($link,"INSERT INTO attacks_stats(attack_name, count,description) VALUES ('$title','0','$description')");
+       $query1 = mysqli_query($link,"INSERT INTO deployed (attack_name, dir) VALUES ('$title','$set_dir') ");
 
 //Заменяем слово #attack_name в файле auth.php на $title
     $file_contents_auth = file_get_contents($set_dir_auth);
