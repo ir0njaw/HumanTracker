@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Шаблоны.Удаление развернутых шаблонов</title>
+    <title>USB</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -20,11 +20,6 @@
     <!-- Custom Fonts -->
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <!--Galery -->
-    
-    <link rel="stylesheet" type="text/css" href="../css/component.css" />
-    <script src="../js/modernizr.custom.js"></script>
-    <!--/Galery -->
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -97,7 +92,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="glyphicon glyphicon-file"></i> Создание отчета <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a><i class="glyphicon glyphicon-file"></i> Создание отчета</a>
                         <ul id="demo1">
                             <li>
                                 <a href="../report/">Создать отчет</a>
@@ -126,18 +121,14 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Шаблоны
-                            <small>(удаление)</small>
+                            USB
                         </h1>
                         <ol class="breadcrumb">
                             <li>
                                 <i class="fa fa-dashboard"></i>  <a href="../">Статистика</a>
                             </li>
-                            <li>
-                                <i class="glyphicon glyphicon-list-alt"></i><a href="../template/"> Шаблоны</a>
-                            </li>
                             <li class="active">
-                                <i class="glyphicon glyphicon-list-alt"></i> Удалить</a>
+                                <i class="fa fa-flag"></i> USB</a>
                             </li>
                         </ol>
          
@@ -147,13 +138,10 @@
                 
  <!-- Таблица -->     <div class="col-lg-12">
 
-
+                        <div class="table-responsive">
+                           <div class="footer"></div>
                             <h3>Удалить развернутые шаблоны</h3>
-                            <div class="container"> 
-            <!-- Codrops top bar -->
-                                <div class="main">
-                                
-            <?php
+                                <?php
                 include('../bd.php');
                 mysqli_set_charset($link, "utf8");
                 
@@ -180,6 +168,19 @@
 
                         mysqli_query($link,"DELETE FROM deployed WHERE attack_name = 'Яндекс.Диск' ");
                         mysqli_query($link,"DELETE FROM attacks_stats WHERE attack_name = 'Яндекс.Диск' ");
+                    }
+                }
+
+                if($_POST['attack'] == "Gitlab"){
+                    $query = mysqli_query($link,"SELECT * FROM deployed WHERE attack_name = 'Gitlab' ");
+                    while($row = mysqli_fetch_array($query,MYSQLI_NUM)){
+                        $dir = $row[1];
+                        $delete_sender = $dir.'/users';
+                        exec ("rm -rf $delete_sender");
+
+
+                        mysqli_query($link,"DELETE FROM deployed WHERE attack_name = 'Gitlab' ");
+                        mysqli_query($link,"DELETE FROM attacks_stats WHERE attack_name = 'Gitlab' ");
                     }
                 }
                 
@@ -293,6 +294,7 @@
                     $dir = $row[1];
                     echo '<div class="col-lg-1 text-center" style="border:1px solid #ccc;width:400px;margin:0 30px 30px 0;padding:30px ">';
                     if($attack_name == "Яндекс.Диск"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/index.php' target='_blank''>Перейти к шаблону $attack_name</p>";}
+                     if($attack_name == "Gitlab"){echo "<p><a href='https://gitlab.$_SERVER[HTTP_HOST]/users/' target='_blank''>Перейти к шаблону $attack_name</p>";}
                     if($attack_name == "Яндекс.Паспорт"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/index.php' target='_blank'>$attack_name</p>";}
                     if($attack_name == "Outlook"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/owa' target='_blank'>$attack_name</p>";}
                     if($attack_name == "Проверка пароля"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/check/' target='_blank'>$attack_name</p>";}
@@ -312,22 +314,19 @@
                    
 
             ?>
-                   
                         </div>
+<!-- /Таблица -->       </div>
                     </div>
-                    </div>
-                    </div>
+                </div>
                 <!-- /.row -->
-            </div>
+
             </div>
             <!-- /.container-fluid -->
 
         </div>
         <!-- /#page-wrapper -->
-    </div>
-    </div>
 
-
+    </div>
     <!-- /#wrapper -->
 
     <!-- jQuery -->
@@ -335,12 +334,6 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/grid.js"></script>
-    <script>
-            $(function() {
-                Grid.init();
-            });
-        </script>
 
 </body>
 
