@@ -139,7 +139,7 @@
                     
                 <?php
                 include ("../bd.php");
-
+                mysqli_set_charset($link, "utf8");
                 $query = mysqli_query($link,"SELECT * FROM `logs_visited`");
 
 
