@@ -292,13 +292,25 @@
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- jQuery -->
     <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
-
+    <script src="../js/grid.js"></script>
+<script>
+            $(function() {
+                Grid.init();
+            });
+</script>
+    
+<script type="text/javascript">
+$(document).ready(function(){
+        $("img").click(function() {
+            $("#hta, #usb, #makros").css("height","250px");
+            $( ".og-expander" ).remove();
+        });
+});
+    </script>
 </body>
 
 </html>
