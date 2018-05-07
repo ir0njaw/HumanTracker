@@ -6,6 +6,9 @@ $attack = mysqli_real_escape_string($link, $_GET['attack']);
 if($attack == 'check'){
 	$attack = 'Проверка пароля';
 }
+elseif($attack == 'Outlook'){
+	$attack = 'Outlook';
+}
 elseif($attack == 'yandexdisk'){
 	$attack = 'Яндекс.Диск';
 }
