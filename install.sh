@@ -3,6 +3,7 @@
 apt-get update
 apt-get -y install build-essential libssl-dev libffi-dev python3-dev
 apt-get -y install python-dev python-setuptools
+apt-get install python-pip
 pip2 install openpyxl
 pip2 install pillow
 
