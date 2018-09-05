@@ -4,7 +4,7 @@ if(isset($_GET['id'])){$id = $_GET['id'];}
 if(isset($_GET['user'])){$client_id = $_GET['user'];}
 
 if($id =='1'){
-        $query = mysqli_query($link, "DELETE FROM tasks WHERE client_id=$client_id");
+        $query = mysqli_query($link, "DELETE FROM tasks WHERE client_id='$client_id'");
         header('Location: hta/');
 }
 elseif($id =='2'){
