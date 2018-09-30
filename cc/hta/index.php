@@ -164,7 +164,7 @@ echo '
                 <option class="option">dnld</option>
                 <option class="option">upload</option>
                 <option class="option">screeshot</option>
-                <option class="option">kill_bot !!!</option>
+                <option class="option">kill</option>
             </select>       
         </div>
 
