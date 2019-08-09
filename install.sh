@@ -2,7 +2,7 @@
 
 apt-get -y install build-essential libssl-dev libffi-dev python3-dev
 apt-get -y install python-dev python-setuptools
-apt-get install python-pip
+apt-get -y install python-pip
 pip2 install openpyxl
 pip2 install pillow
 
@@ -13,7 +13,7 @@ echo "_______________________________"
 cd ../ && git clone https://github.com/mail-in-a-box/mailinabox && cd mailinabox && sudo setup/start.sh
 cd ../ && cd HumanTracker
 apt-get -y install mysql-server
-apt-get install -y php-fpm php-mysql
+apt-get -y install php-fpm php-mysql
 
 echo 'root:$apr1$vGZ6JkMF$ZcoktoPQA92Ft.QBbC/Iv/' > /etc/nginx/.htpasswd
 
