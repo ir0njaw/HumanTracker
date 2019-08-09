@@ -12,7 +12,7 @@ echo "Installation of Mailinabox"
 echo "///////////////////////////////"
 
 cd ../ && git clone https://github.com/mail-in-a-box/mailinabox && cd mailinabox && sudo setup/start.sh
-cd ../ && cd HumanFucker
+cd ../ && cd HumanTracker
 apt-get -y install mysql-server
 apt-get -y install php5-fpm php5-mysql
 
@@ -37,7 +37,7 @@ echo "///////////////////////////////"
 echo "Installation of FuckHumans 1.0"
 echo "///////////////////////////////"
 
-cd ../ && mv HumanFucker /home/user-data/www/default/admin && cd /home/user-data/www/default/admin
+cd ../ && mv HumanTracker /home/user-data/www/default/admin && cd /home/user-data/www/default/admin
 echo "///////////////////////////////"
 echo "ENTER DATABASE USER NAME:"
 echo "///////////////////////////////"
