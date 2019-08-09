@@ -1,6 +1,6 @@
 <?php
 
-$user = 'root';
+$user = 'social';
 $password = '123QWEasd';
 $db = 'dbcc';
 $host = 'localhost';
