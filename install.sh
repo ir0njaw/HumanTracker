@@ -25,7 +25,8 @@ cd ../ && mv HumanTracker /home/user-data/www/default/admin && cd /home/user-dat
 dbuser=root
 dbpassword=123QWEasd
 mysql -u $dbuser -p$dbpassword -e "CREATE DATABASE dbcc"
-echo "CREATE DATASE dbcc -> Done"
+CREATE USER 'social'@'localhost' IDENTIFIED BY '123QWEasd';
+GRANT ALL PRIVILEGES ON dbcc.* TO 'social'@'localhost';
 mysql -u $dbuser -p$dbpassword dbcc < dbcc.sql
 
 rm /home/user-data/www/default/admin/dbcc.sql
