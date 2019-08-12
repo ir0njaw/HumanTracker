@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : mr-gpoup.ru
+
  Source Server Type    : MySQL
  Source Server Version : 50727
  Source Host           : localhost:3306
