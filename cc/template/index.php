@@ -145,7 +145,7 @@
 
                         <div class="table-responsive">
                            <div class="footer"></div>
-                            <h3>Описание</h3>
+                            <h3>Фишинг</h3>
                                 <ul id='og-grid' class='og-grid' style="font-weight: 500">
                           <?php
                     include('../bd.php');
@@ -174,7 +174,7 @@
                                 <input type='hidden' name='title' value='$title'>
                                 <button class='btn btn-default' style='height:24px;padding:2px 2px;color:#555' type='submit'>Go!</button></form>
                             </li>";
-                        if($title == 'Проверка пароля' OR $title == 'Яндекс.Диск' OR $title == 'Outlook' OR $title == 'Яндекс.Паспорт' OR $title == 'Gitlab'){  
+                        if($title == 'Проверка пароля' OR $title == 'Яндекс.Диск' OR $title == 'Outlook' OR $title == 'Яндекс.Паспорт' OR $title == 'Gitlab' OR $title == 'Kerio'){  
                       echo "
                              $content";
                       }
