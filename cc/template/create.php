@@ -1,21 +1,6 @@
 <?php
-
-$user = 'root';
-$password = 'root';
-$db = 'dbcc';
-$host = 'localhost';
-$port = 3306;
-
-$link = mysqli_init();
-
-$success = mysqli_real_connect(
-   $link, 
-   $host, 
-   $user, 
-   $password, 
-   $db,
-   $port
-);
+include ('/home/user-data/www/default/admin/cc/bd.php');
+mysqli_set_charset($link, "utf8");
 
 $template_name = htmlspecialchars($_POST['name']);
 $filename = htmlspecialchars($_POST['name'].".jpg");
