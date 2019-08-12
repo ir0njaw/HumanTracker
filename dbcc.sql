@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : localhost_3306
+ Source Server         : mr-gpoup.ru
  Source Server Type    : MySQL
- Source Server Version : 50558
+ Source Server Version : 50727
  Source Host           : localhost:3306
  Source Schema         : dbcc
 
  Target Server Type    : MySQL
- Target Server Version : 50558
+ Target Server Version : 50727
  File Encoding         : 65001
 
- Date: 19/12/2017 13:39:34
+ Date: 13/08/2019 01:34:45
 */
 
 SET NAMES utf8mb4;
@@ -27,7 +27,7 @@ CREATE TABLE `attacks_stats` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` text CHARACTER SET cp1251 COLLATE cp1251_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for deployed
@@ -99,20 +99,7 @@ CREATE TABLE `replies` (
   `part_id` int(5) NOT NULL,
   `data` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of replies
--- ----------------------------
-BEGIN;
-INSERT INTO `replies` VALUES (1, '', '', 0, '');
-INSERT INTO `replies` VALUES (2, '', '', 0, '');
-INSERT INTO `replies` VALUES (3, '', '', 0, '');
-INSERT INTO `replies` VALUES (4, '', '', 0, '');
-INSERT INTO `replies` VALUES (5, '', '', 0, '');
-INSERT INTO `replies` VALUES (6, '', '', 0, '');
-INSERT INTO `replies` VALUES (7, '', '', 0, '');
-COMMIT;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for tasks
@@ -153,8 +140,9 @@ INSERT INTO `template` VALUES ('Яндекс.Паспорт.jpg', 'Яндекс.
 INSERT INTO `template` VALUES ('Проверка пароля.jpg', 'Проверка пароля_logo.jpg', 'Проверка пароля.zip', 'Проверка пароля/', '');
 INSERT INTO `template` VALUES ('Вебинар.jpg', 'Вебинар_logo.jpg', 'Вебинар.zip', 'Вебинар/', '');
 INSERT INTO `template` VALUES ('Установка антивируса.jpg', 'Установка антивируса_logo.jpg', 'Установка антивируса.zip', 'Установка антивируса/', '');
-INSERT INTO `template` VALUES ('Перерасчет ЗП.jpg', 'Перерасчет ЗП_logo.jpg', 'Перерасчет ЗП.zip', 'Перерасчет ЗП/', '');
 INSERT INTO `template` VALUES ('Премия.jpg', 'Премия_logo.jpg', 'Премия.zip', 'Премия/', '');
+INSERT INTO `template` VALUES ('Kerio.jpg', 'Kerio_logo.jpg', 'Kerio.zip', 'Kerio/', 'Kerio Connect');
+INSERT INTO `template` VALUES ('Перерасчет ЗП.jpg', 'Перерасчет ЗП_logo.jpg', 'Перерасчет ЗП.zip', 'Перерасчет ЗП/', '');
 COMMIT;
 
 -- ----------------------------
@@ -166,19 +154,5 @@ CREATE TABLE `timelog` (
   `command_id` varchar(20) NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of timelog
--- ----------------------------
-BEGIN;
-INSERT INTO `timelog` VALUES (0, '', '2017-11-09 16:55:42');
-INSERT INTO `timelog` VALUES (0, '', '2017-12-17 16:08:31');
-INSERT INTO `timelog` VALUES (0, '', '2017-12-17 19:04:23');
-INSERT INTO `timelog` VALUES (0, '', '2017-12-18 11:13:32');
-INSERT INTO `timelog` VALUES (0, '', '2017-12-18 11:20:17');
-INSERT INTO `timelog` VALUES (0, '', '2017-12-18 11:30:27');
-INSERT INTO `timelog` VALUES (0, '', '2017-12-18 11:41:19');
-INSERT INTO `timelog` VALUES (0, '', '2017-12-18 11:49:45');
-COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
