@@ -1,5 +1,11 @@
 #!/bin/bash
 
+wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+sudo apt-get update
+sudo add-apt-repository universe
+sudo apt-get install -y powershell
+
 apt-get -y install build-essential libssl-dev libffi-dev python3-dev
 apt-get -y install python-dev python-setuptools
 apt-get -y install python-pip
