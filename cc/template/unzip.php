@@ -15,6 +15,7 @@ $title = mysqli_real_escape_string($link,$_POST['title']);
 
 //Костыль, нужен для того, чтобы когда юзер введет креды, мы зафиксировали успешное действие и увеличили переменную count на 1 (в файле auth.php описано)
 if($title == "Outlook"){
+    $set_dir_to_reditect = 'https://'.$_SERVER['SERVER_NAME'].'/owa/';
 	$set_dir_auth = $set_dir.'/owa/auth/auth.php';
     $set_dir_visited = $set_dir.'/owa/auth/visited.php';
     $description = "Сценарий. Новый почтовый сервер.
@@ -26,31 +27,8 @@ if($title == "Outlook"){
                     По списку email-адресов сотрудников производилась почтовая рассылка от имени информационного отдела. Ссылка в письме ведет на фишинговый ресурс, внешне имитирующий настоящий Outlook. В случае ввода учетных перехода на сайт и ввода учетных данных, нами логировались эти данные и использовались для дальнейшего развития атаки.
                     В ходе тестирования фиксировались три состояния: открытие письма, переход по ссылке, ввод учетных данных.";
 
-}elseif($title == "Яндекс.Диск"){
-	$set_dir_auth = $set_dir.'/auth.php';
-    $set_dir_visited = $set_dir.'/visited.php';
-    $description = "Сценарий. Яндекс.Диск 
-                    Отправитель: Имя Фамилия, email 
-                    Даты проведения атак: с 03.11.2016.
-                    Цель: компрометация машин сотрудников.
-
-                    Описание:
-                    По списку email-адресов сотрудников производилась почтовая рассылка от имени информационного отдела. Ссылка в письме ведет на ресурс Яндекс.Диск, на который загружен вредоносный файл. В случае скачивания и запуска данного вложения машина становится подконтрольной.
-                    В ходе тестирования фиксировались три состояния: открытие письма, сохранение вложения, запуск вредоносного вложения.";
-
-}elseif($title == "Яндекс.Паспорт"){
-	$set_dir_auth = $set_dir.'/auth.php';
-    $set_dir_visited = $set_dir.'/visited.php';
-    $description = "Сценарий. Яндекс.Паспорт 
-                    Отправитель: Имя Фамилия, email 
-                    Даты проведения атак: с 03.11.2016.
-                    Цель: получение учетных данных сотрудников.
-
-                    Описание:
-                    По списку email-адресов сотрудников производилась почтовая рассылка от имени компании Яндекс. Ссылка в письме ведет на фишинговый ресурс, внешне имитирующий настоящий. В случае перехода на сайт и ввода учетных данных, эти данные логировались и использовались для дальнейшего развития атаки.
-                    В ходе тестирования фиксировались три состояния: открытие письма, переход по ссылке, ввод учетных данных.";
-
 }elseif($title == "Проверка пароля"){
+    $set_dir_to_reditect = 'https://'.$_SERVER['SERVER_NAME'].'/check/';
 	$set_dir_auth = $set_dir.'/check/auth.php';
     $set_dir_visited = $set_dir.'/check/visited.php';
     $description = "Сценарий. Проверка пароля 
@@ -63,6 +41,7 @@ if($title == "Outlook"){
                     В ходе тестирования фиксировались три состояния: открытие письма, переход по ссылке, ввод учетных данных.";
 }
 elseif($title == "Вебинар"){
+    $set_dir_to_reditect = 'https://'.$_SERVER['SERVER_NAME'].'/event/';
     $set_dir_visited = $set_dir.'/event/6f3249aa304055d6/visited.php';
     $description = "Сценарий. Проведение вебинара 
                     Отправитель: Имя Фамилия, email 
@@ -74,6 +53,7 @@ elseif($title == "Вебинар"){
                     В ходе тестирования фиксировались три состояния: открытие письма, переход по ссылке, запуск вредоносного вложения.";
 }
 elseif($title == "Обновление VPN"){
+    $set_dir_to_reditect = 'https://'.$_SERVER['SERVER_NAME'].'/openvpn/';
     $set_dir_visited = $set_dir.'/openvpn/visited.php';
     $description = "Сценарий. Обновление VPN 
                     Отправитель: Имя Фамилия, email 
@@ -85,6 +65,7 @@ elseif($title == "Обновление VPN"){
                     В ходе тестирования фиксировались три состояния: открытие письма, переход по ссылке, запуск вредоносного вложения.";
 }
 elseif($title == "Перерасчет ЗП"){
+    $set_dir_to_reditect = 'https://'.$_SERVER['SERVER_NAME'].'/pereraschet/';
     $set_dir_auth = $set_dir.'/pereraschet/listok.php';
     $set_dir_visited = $set_dir.'/pereraschet/files/listok.php';
     $description = "Сценарий. Перерасчет З/П
@@ -99,6 +80,7 @@ elseif($title == "Перерасчет ЗП"){
                     В ходе тестирования фиксировались три состояния: открытие письма, сохранение вложения, запуск макроса.";
 }
 elseif($title == "Премия"){
+    $set_dir_to_reditect = 'https://'.$_SERVER['SERVER_NAME'].'/premia/';
     $set_dir_auth = $set_dir.'/premia/listok.php';
     $set_dir_visited = $set_dir.'/premia/files/visited.php';
     $description = "Сценарий. Премия
@@ -113,6 +95,7 @@ elseif($title == "Премия"){
                     В ходе тестирования фиксировались три состояния: открытие письма, сохранение вложения, запуск макроса.";
 }
 elseif($title == "Установка антивируса"){
+    $set_dir_to_reditect = 'https://'.$_SERVER['SERVER_NAME'].'/avast/';
     $set_dir_visited = $set_dir.'/avast/visited.php';
     $description = "Сценарий. Обновление VPN 
                     Отправитель: Имя Фамилия, email 
@@ -137,5 +120,5 @@ elseif($title == "Установка антивируса"){
     $file_contents_visited = str_replace('#attack_name',$title,$file_contents_visited);
     file_put_contents($set_dir_visited,$file_contents_visited);
     
-    header('Location: index.php'); 
+    header("Location: $set_dir_to_reditect "); 
 ?>
