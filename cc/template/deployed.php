@@ -144,71 +144,6 @@
                                 <?php
                 include('../bd.php');
                 mysqli_set_charset($link, "utf8");
-                
-                if($_POST['attack'] == "Яндекс.Диск"){
-                    $query = mysqli_query($link,"SELECT * FROM deployed WHERE attack_name = 'Яндекс.Диск' ");
-                    while($row = mysqli_fetch_array($query,MYSQLI_NUM)){
-                        $dir = $row[1];
-                        $delete_sender = $dir.'/sender';
-                        exec ("rm -rf $delete_sender");
-                        $delete_report = $dir.'/report';
-                        exec ("rm -rf $delete_report");
-                        $delete_files = $dir.'/files';
-                        exec ("rm -rf $delete_files");
-                        $delete_auth = $dir.'/auth.php';
-                        exec ("rm $delete_auth");
-                        $delete_example = $dir.'/example.jpg';
-                        exec ("rm $delete_example");
-                        $delete_config = $dir.'/config.php';
-                        exec ("rm $delete_config");
-                        $delete_index = $dir.'/index.php';
-                        exec ("rm $delete_index");
-                        $delete_visited = $dir.'/visited.php';
-                        exec ("rm $delete_visited");
-
-                        mysqli_query($link,"DELETE FROM deployed WHERE attack_name = 'Яндекс.Диск' ");
-                        mysqli_query($link,"DELETE FROM attacks_stats WHERE attack_name = 'Яндекс.Диск' ");
-                    }
-                }
-
-                if($_POST['attack'] == "Gitlab"){
-                    $query = mysqli_query($link,"SELECT * FROM deployed WHERE attack_name = 'Gitlab' ");
-                    while($row = mysqli_fetch_array($query,MYSQLI_NUM)){
-                        $dir = $row[1];
-                        $delete_sender = $dir.'/users';
-                        exec ("rm -rf $delete_sender");
-
-
-                        mysqli_query($link,"DELETE FROM deployed WHERE attack_name = 'Gitlab' ");
-                        mysqli_query($link,"DELETE FROM attacks_stats WHERE attack_name = 'Gitlab' ");
-                    }
-                }
-                
-                if($_POST['attack'] == "Яндекс.Паспорт"){
-                    $query = mysqli_query($link,"SELECT * FROM deployed WHERE attack_name = 'Яндекс.Паспорт' ");
-                    while($row = mysqli_fetch_array($query,MYSQLI_NUM)){
-                        $dir = $row[1];
-                        $delete_sender = $dir.'/sender';
-                        exec ("rm -rf $delete_sender");
-                        $delete_report = $dir.'/report';
-                        exec ("rm -rf $delete_report");
-                        $delete_files = $dir.'/files';
-                        exec ("rm -rf $delete_files");
-                        $delete_auth = $dir.'/auth.php';
-                        exec ("rm $delete_auth");
-                        $delete_example = $dir.'/example.jpg';
-                        exec ("rm $delete_example");
-                        $delete_config = $dir.'/config.php';
-                        exec ("rm $delete_config");
-                        $delete_index = $dir.'/index.php';
-                        exec ("rm $delete_index");
-                        $delete_visited = $dir.'/visited.php';
-                        exec ("rm $delete_visited");
-
-                        mysqli_query($link,"DELETE FROM deployed WHERE attack_name = 'Яндекс.Паспорт' ");
-                        mysqli_query($link,"DELETE FROM attacks_stats WHERE attack_name = 'Яндекс.Паспорт' ");
-                    }
-                }
 
                 if($_POST['attack'] == "Outlook"){
                     $query = mysqli_query($link,"SELECT * FROM deployed WHERE attack_name = 'Outlook' ");
@@ -304,10 +239,8 @@
                     $attack_name = $row[0];
                     $dir = $row[1];
                     echo '<div class="col-lg-1 text-center" style="border:1px solid #ccc;width:400px;margin:0 30px 30px 0;padding:30px ">';
-                    if($attack_name == "Яндекс.Диск"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/index.php' target='_blank''>Перейти к шаблону $attack_name</p>";}
+                    
                     if($attack_name == "Kerio"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/webmail/login/index.php' target='_blank''>Перейти к шаблону $attack_name</p>";}
-                     if($attack_name == "Gitlab"){echo "<p><a href='https://gitlab.$_SERVER[HTTP_HOST]/users/' target='_blank''>Перейти к шаблону $attack_name</p>";}
-                    if($attack_name == "Яндекс.Паспорт"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/index.php' target='_blank'>$attack_name</p>";}
                     if($attack_name == "Outlook"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/owa' target='_blank'>$attack_name</p>";}
                     if($attack_name == "Проверка пароля"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/check/' target='_blank'>$attack_name</p>";}
                     if($attack_name == "Вебинар"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/event/' target='_blank'>$attack_name</p>";}
