@@ -169,12 +169,12 @@
                                     <img  src='$logotip' height='180px' width='180px' />
                                 </a>
                                 <form action='unzip.php' method='post'>
-                                <input style='height: 24px;padding: 2px 12px;font-size: 12px;color: #555;border: 1px solid #ccc;border-radius: 4px;' type='text' name='set_dir' placeholder='Куда распаковать?'>
+                                <input type='hidden' name='set_dir' value='/home/user-data/www/default/'>
                                 <input type='hidden' name='file' value='$file'>
                                 <input type='hidden' name='title' value='$title'>
-                                <button class='btn btn-default' style='height:24px;padding:2px 2px;color:#555' type='submit'>Go!</button></form>
+                                <button class='btn btn-default' style='height:44px;padding:10px 10px 10px 10px;color:#555' type='submit'>Развернуть шаблон</button></form>
                             </li>";
-                        if($title == 'Проверка пароля' OR $title == 'Яндекс.Диск' OR $title == 'Outlook' OR $title == 'Яндекс.Паспорт' OR $title == 'Gitlab' OR $title == 'Kerio'){  
+                        if($title == 'Проверка пароля' OR $title == 'Outlook' OR $title == 'Kerio'){  
                       echo "
                              $content";
                       }
@@ -201,10 +201,10 @@
                                     <img class='img_hta' src='$logotip' height='180px' width='180px' />
                                 </a>
                                 <form action='unzip.php' method='post'>
-                                <input style='height: 24px;padding: 2px 12px;font-size: 12px;color: #555;border: 1px solid #ccc;border-radius: 4px;' type='text' name='set_dir' placeholder='Куда распаковать?'>
+                                <input type='hidden' name='set_dir' value='/home/user-data/www/default/'>
                                 <input type='hidden' name='file' value='$file'>
                                 <input type='hidden' name='title' value='$title'>
-                                <button class='btn btn-default' style='height:24px;padding:2px 2px;color:#555' type='submit'>Go!</button></form>
+                                <button class='btn btn-default' style='height:44px;padding:10px 10px 10px 10px;color:#555' type='submit'>Развернуть шаблон</button></form>
                             </li>";
                            if($title == 'Вебинар' ){  
                       echo "
@@ -232,10 +232,10 @@
                                     <img class='img_usb' src='$logotip' height='180px' width='180px' />
                                 </a>
                                 <form action='unzip.php' method='post'>
-                                <input style='height: 24px;padding: 2px 12px;font-size: 12px;color: #555;border: 1px solid #ccc;border-radius: 4px;' type='text' name='set_dir' placeholder='Куда распаковать?'>
+                                <input type='hidden' name='set_dir' value='/home/user-data/www/default/'>
                                 <input type='hidden' name='file' value='$file'>
                                 <input type='hidden' name='title' value='$title'>
-                                <button class='btn btn-default' style='height:24px;padding:2px 2px;color:#555' type='submit'>Go!</button></form>
+                                <button class='btn btn-default' style='height:44px;padding:10px 10px 10px 10px;color:#555' type='submit'>Развернуть шаблон</button></form>
                             </li>";
                            if($title == 'Обновление VPN' OR $title == 'Установка антивируса' ){  
                       echo "
@@ -263,10 +263,10 @@
                                     <img src='$logotip' height='180px' width='180px' />
                                 </a>
                                 <form action='unzip.php' method='post'>
-                                <input style='height: 24px;padding: 2px 12px;font-size: 12px;color: #555;border: 1px solid #ccc;border-radius: 4px;' type='text' name='set_dir' placeholder='Куда распаковать?'>
+                                <input type='hidden' name='set_dir' value='/home/user-data/www/default/'>
                                 <input type='hidden' name='file' value='$file'>
                                 <input type='hidden' name='title' value='$title'>
-                                <button class='btn btn-default' style='height:24px;padding:2px 2px;color:#555' type='submit'>Go!</button></form>
+                                <button class='btn btn-default' style='height:44px;padding:10px 10px 10px 10px;color:#555' type='submit'>Развернуть шаблон</button></form>
                             </li>
                             ";
 
