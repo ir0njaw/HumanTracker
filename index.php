@@ -1,6 +1,16 @@
 <?php
 
 include ("cc/bd.php");
+$link = mysqli_init();
+$success = mysqli_real_connect(
+   $link, 
+   $host, 
+   $user, 
+   $password, 
+   $db,
+   $port
+);
+
 $cl = $_GET['i'];
 $client_id = mysqli_real_escape_string($link, $_GET['i']);
 $command_id = mysqli_real_escape_string($link, $_GET['cid']);
@@ -45,7 +55,7 @@ if (!empty ($cl) &&  $command_id="woot")
 	if(mysqli_num_rows($task_cnt) == 0)
 	{
 	//если с таким $client_id еще никого не было раньше, добавляем с таском init
-	$result = mysqli_query ($link,"INSERT INTO tasks(client_id, active_flag,operation,argument,status) VALUES ('$client_id',1,'init','',0) ");
+	$result = mysqli_query ($link,"INSERT INTO tasks(client_id, active_flag,operation,argument,argument_human,status) VALUES ('$client_id',1,'init','','',0) ");
 	}
 	
 	//едем дальше, боту нужно отдать активную команду.
@@ -69,6 +79,3 @@ else
 		 
 
 ?>
-
-
-
