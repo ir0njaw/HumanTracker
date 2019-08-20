@@ -9,12 +9,6 @@ if($attack == 'check'){
 elseif($attack == 'Outlook'){
 	$attack = 'Outlook';
 }
-elseif($attack == 'yandexdisk'){
-	$attack = 'Яндекс.Диск';
-}
-elseif($attack == 'yandexpassport'){
-	$attack = 'Яндекс.Паспорт';
-}
 elseif($attack == 'openvpn'){
 	$attack = 'Обновление VPN';
 }
