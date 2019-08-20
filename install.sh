@@ -37,6 +37,7 @@ mysql -u $dbuser -p$dbpassword dbcc < dbcc.sql
 
 rm /home/user-data/www/default/admin/dbcc.sql
 rm /home/user-data/www/default/admin/install.sh
+mv /home/user-data/www/default/admin/local.conf /root/
 sudo chmod -R 757 /home/user-data/www/default/
 rm /etc/cron.d/mailinabox-nightly
 
