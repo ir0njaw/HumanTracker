@@ -15,6 +15,7 @@ echo '
                             </div>
                             <div class="col-xs-9 text-right">';
                                 include ('bd.php');
+                                mysqli_set_charset($link, "utf8");
                                 $query = mysqli_query($link, "SELECT COUNT(DISTINCT client_id) FROM tasks");
 
                                 while ($row = mysqli_fetch_array($query, MYSQLI_NUM))
