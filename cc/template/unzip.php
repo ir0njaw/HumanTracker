@@ -81,7 +81,7 @@ elseif($title == "Обновление VPN"){
 elseif($title == "Перерасчет ЗП"){
     $set_dir_to_reditect = 'https://'.$_SERVER['SERVER_NAME'].'/pereraschet/';
     $set_dir_auth = $set_dir.'/pereraschet/listok.php';
-    $set_dir_visited = $set_dir.'/pereraschet/files/listok.php';
+    $set_dir_visited = $set_dir.'/pereraschet/files/visited.php';
     $description = "Сценарий. Перерасчет З/П
                     Отправитель: Михаил Зеленцов, m.zelencov@passwordgpu.ru 
                     Даты проведения атак: с 03.11.2016. 
