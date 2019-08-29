@@ -151,7 +151,7 @@
                     <div class='menu'><table class='table table-bordered table-hover table-striped' id='table'>";
                 echo '<button style="background:white;border:1px solid #DDDDDD;text-decoration: none"><a href="../delete.php?id=5" style="color:#333333" onclick="return confirmDelete();">Очистить таблицу</a></button>    
                     <thead>
-                        <tr><td><b>ID</b></td><td width="15%"><b>Атака</b></td><td><b>Открыл письмо?</b></td><td><b>Перешел на фишинговый сайт?</b></td><td><b>Ввел учетные данные/Запустил макросы</b></td></th</tr>
+                        <tr><td><b>ID</b></td><td width="15%"><b>Атака</b></td><td><b>Перешел на фишинговый сайт?</b></td><td><b>Ввел учетные данные/Запустил макросы</b></td></th</tr>
                     </thead>';
 
                 while($row = mysqli_fetch_array($query,MYSQLI_NUM)) {
@@ -166,7 +166,7 @@
                 $third_stage = $row[4];    
 
                 echo "<tbody>
-                    <tr><td>$id</td><td>$attack</td><td>$first_stage</td><td>$second_stage</td><td>$third_stage</td></tr>";
+                    <tr><td>$id</td><td>$attack</td><td>$first_stage</td><td>$second_stage</td></tr>";
                 }
                 echo "</tbody></table><div align='right'><input type='submit' style='background:#439467;border:0;color:white' value='Export to Excel!' onclick='doit();'></div></div>";
                 ?>
@@ -208,7 +208,5 @@ function confirmDelete() {
   }
 }
 </script>
-
 </body>
-
 </html>
