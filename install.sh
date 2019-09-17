@@ -28,6 +28,10 @@ echo "Installation of FuckHumans 1.0"
 echo "_______________________________"
 
 mv /root/HumanTracker /home/user-data/www/default/admin
+HOSTNAME=${HOSTNAME//box.}
+mv /home/user-data/www/default/admin/local.conf /home/user-data/www/$HOSTNAME.conf
+/root/mailinabox/tools/web_update
+
 dbuser=root
 dbpassword=123QWEasd
 mysql -u $dbuser -p$dbpassword -e "CREATE DATABASE dbcc"
