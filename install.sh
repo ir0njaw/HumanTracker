@@ -16,8 +16,8 @@ echo "_______________________________"
 echo "Installation of Mailinabox"
 echo "_______________________________"
 
-cd ../ && git clone https://github.com/mail-in-a-box/mailinabox && cd mailinabox && sudo setup/start.sh
-cd ../ && cd HumanTracker
+cd /root/ && git clone https://github.com/mail-in-a-box/mailinabox && cd mailinabox && sudo setup/start.sh
+cd /root/HumanTracker
 apt-get -y install mysql-server
 apt-get -y install php-fpm php-mysql
 
@@ -27,17 +27,16 @@ echo "_______________________________"
 echo "Installation of FuckHumans 1.0"
 echo "_______________________________"
 
-cd ../ && mv HumanTracker /home/user-data/www/default/admin && cd /home/user-data/www/default/admin
+mv /root/HumanTracker /home/user-data/www/default/admin
 dbuser=root
 dbpassword=123QWEasd
 mysql -u $dbuser -p$dbpassword -e "CREATE DATABASE dbcc"
 mysql -u $dbuser -p$dbpassword -e "CREATE USER 'social'@'localhost' IDENTIFIED BY '123QWEasd'"
 mysql -u $dbuser -p$dbpassword -e "GRANT ALL PRIVILEGES ON dbcc.* TO 'social'@'localhost'"
-mysql -u $dbuser -p$dbpassword dbcc < dbcc.sql
+mysql -u $dbuser -p$dbpassword dbcc < /home/user-data/www/default/admin/dbcc.sql
 
 rm /home/user-data/www/default/admin/dbcc.sql
 rm /home/user-data/www/default/admin/install.sh
-mv /home/user-data/www/default/admin/local.conf /root/
 sudo chmod -R 757 /home/user-data/www/default/
 rm /etc/cron.d/mailinabox-nightly
 
