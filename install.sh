@@ -16,7 +16,7 @@ echo "_______________________________"
 echo "Installation of Mailinabox"
 echo "_______________________________"
 
-cd /root/ && git clone https://github.com/mail-in-a-box/mailinabox && cd mailinabox && sudo setup/start.sh
+cd /root/ && git clone https://github.com/ir0njaw/mailinabox && cd mailinabox && sudo setup/start.sh
 cd /root/HumanTracker
 apt-get -y install mysql-server
 apt-get -y install php-fpm php-mysql
