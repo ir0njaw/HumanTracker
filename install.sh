@@ -45,7 +45,7 @@ rm /home/user-data/www/default/admin/dbcc.sql
 rm /home/user-data/www/default/admin/install.sh
 rm /home/user-data/www/default/admin/packages-microsoft-prod.deb
 rm -rf /home/user-data/www/default/admin/.git/
-sudo chmod -R 757 /home/user-data/www/default/
+sudo chmod -R 757 /home/user-data/www/default/ 2> /dev/null
 rm /etc/cron.d/mailinabox-nightly
 
 echo "_______________________________"
