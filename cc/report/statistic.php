@@ -151,22 +151,25 @@
                     <div class='menu'><table class='table table-bordered table-hover table-striped' id='table'>";
                 echo '<button style="background:white;border:1px solid #DDDDDD;text-decoration: none"><a href="../delete.php?id=5" style="color:#333333" onclick="return confirmDelete();">Очистить таблицу</a></button>    
                     <thead>
-                        <tr><td><b>ID</b></td><td width="15%"><b>Атака</b></td><td><b>Перешел на фишинговый сайт?</b></td><td><b>Ввел учетные данные/Запустил макросы</b></td></th</tr>
+                        <tr><td><b>ID</b></td><td><b>Логин</b></td><td width="15%"><b>Атака</b></td><td><b>Перешел на фишинговый сайт?</b></td><td><b>Ввел учетные данные/Запустил макросы</b></td></th</tr>
                     </thead>';
 
                 while($row = mysqli_fetch_array($query,MYSQLI_NUM)) {
                 $id=$row[0];
                 $id= htmlspecialchars($id);
                 $id= substr($id, 0,30);     // id
-                $attack=$row[1];
+                $login=$row[1];
+                $login= htmlspecialchars($login);
+                $login= substr($login, 0,30); 
+                $attack=$row[2];
                 $attack= htmlspecialchars($attack);
                 $attack= substr($attack, 0,50);     // login
-                $first_stage = $row[2];                   //ip
-                $second_stage = $row[3];                   
-                $third_stage = $row[4];    
+                $first_stage = $row[3];                   //ip
+                $second_stage = $row[4];                   
+                $third_stage = $row[5];    
 
                 echo "<tbody>
-                    <tr><td>$id</td><td>$attack</td><td>$first_stage</td><td>$second_stage</td></tr>";
+                    <tr><td>$id</td><td>$login</td><td>$attack</td><td>$first_stage</td><td>$second_stage</td></tr>";
                 }
                 echo "</tbody></table><div align='right'><input type='submit' style='background:#439467;border:0;color:white' value='Export to Excel!' onclick='doit();'></div></div>";
                 ?>
