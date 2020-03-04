@@ -237,7 +237,7 @@
                                 <input type='hidden' name='title' value='$title'>
                                 <button class='btn btn-default' style='height:44px;padding:10px 10px 10px 10px;color:#555' type='submit'>Развернуть шаблон</button></form>
                             </li>";
-                           if($title == 'Обновление VPN' OR $title == 'Установка антивируса' ){  
+                           if($title == 'Обновление VPN' OR $title == 'Установка антивируса' OR $title == 'LinkedIn' ){  
                       echo "
                              $content";
                       }
