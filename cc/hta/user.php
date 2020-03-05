@@ -4,6 +4,7 @@ include ("../bd.php");
 $query = mysqli_query($link,"SELECT client_id FROM tasks GROUP BY client_id");
 
 echo '
+<button style="background:white;border:1px solid #DDDDDD;text-decoration: none"><a href="../delete.php?id=hta" style="color:#333333" onclick="return confirmDelete();">Очистить таблицу</a></button>
 <table class="table table-bordered table-hover table-striped">
     <thead>
         <tr><th>Боты</th><th>Время</th><th>Последняя команда</th><th>Статус</th></tr>
