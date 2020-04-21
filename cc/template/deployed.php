@@ -241,6 +241,17 @@ header("Pragma: no-cache");
                     }
                 }
 
+                if($_POST['attack'] == "recalculation"){
+                    $query = mysqli_query($link,"SELECT * FROM deployed WHERE attack_name = 'Перерасчет ЗП (фишинг)' ");
+                    while($row = mysqli_fetch_array($query,MYSQLI_NUM)){
+                        $dir = $row[1];
+                        $delete_template = $dir.'/recalculation';
+                        exec ("rm -rf $delete_template");
+                        mysqli_query($link,"DELETE FROM deployed WHERE attack_name = 'Перерасчет ЗП (фишинг)' ");
+                        mysqli_query($link,"DELETE FROM attacks_stats WHERE attack_name = 'Перерасчет ЗП (фишинг)' ");
+                    }
+                }
+
                 $query = mysqli_query($link,"SELECT * FROM deployed");
                 while($row = mysqli_fetch_array($query,MYSQLI_NUM)){
                     $attack_name = $row[0];
@@ -255,6 +266,7 @@ header("Pragma: no-cache");
                     if($attack_name == "LinkedIn"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/vacancy/' target='_blank'>$attack_name</a></p>";$attack_name = "LinkedIn";}
                     if($attack_name == "Установка антивируса"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/avast/' target='_blank'>$attack_name</a></p>";$attack_name = "antivirus";}
                     if($attack_name == "Перерасчет ЗП"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/pereraschet/' target='_blank'>$attack_name</a></p>";$attack_name = "pereraschet";}
+                    if($attack_name == "Перерасчет ЗП (фишинг)"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/recalculation/' target='_blank'>$attack_name</a></p>";$attack_name = "recalculation";}
                     echo ' 
                             <a href="edit.php?template='.$attack_name.'_sendlist"><button class="btn btn-default">sendlist.txt</button></a>
                             <a href="edit.php?template='.$attack_name.'_user"><button class="btn btn-default">user.txt</button></a><br>
@@ -296,7 +308,7 @@ header("Pragma: no-cache");
     <script src="../js/jquery.js"></script>
 
 <script type="text/javascript">
-    $("#but_Outlook, #but_Kerio, #but_Outlook, #but_checkpass, #but_webinar, #but_vpn, #but_antivirus, #but_LinkedIn, #but_pereraschet").click(function(e) {
+    $("#but_Outlook, #but_Kerio, #but_Outlook, #but_checkpass, #but_webinar, #but_vpn, #but_antivirus, #but_LinkedIn, #but_pereraschet, #but_recalculation").click(function(e) {
         e.preventDefault();
         $.ajax({
             type: "POST",
@@ -313,6 +325,7 @@ header("Pragma: no-cache");
 $(document).ready(function(){
       refreshOutlook(),
       refreshPereraschet(),
+      refreshRecalculation(),
       refreshKerio(),
       refreshCheckpass(),
       refreshWebinar(),
@@ -329,6 +342,11 @@ $(document).ready(function(){
     function refreshPereraschet(){
         $("#log_pereraschet").load("../../../pereraschet/sender/send_log.txt", function(){
            setTimeout(refreshPereraschet, 2000);
+        });
+    }
+    function refreshRecalculation(){
+        $("#log_recalculation").load("../../../recalculation/sender/send_log.txt", function(){
+           setTimeout(refreshRecalculation, 2000);
         });
     }
     function refreshKerio(){
