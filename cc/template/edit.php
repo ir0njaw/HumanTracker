@@ -29,6 +29,9 @@ if($_GET['template'] == 'vpn'){
 if($_GET['template'] == 'pereraschet'){
 	$file = '/home/user-data/www/default/pereraschet/sender/send.py';
 }
+if($_GET['template'] == 'recalculation'){
+	$file = '/home/user-data/www/default/recalculation/sender/send.py';
+}
 //Изменение файлов sendlist.txt
 if($_GET['template'] == 'Outlook_sendlist'){
 	$file = '/home/user-data/www/default/owa/auth/sender/sendlist.txt';
@@ -53,6 +56,9 @@ if($_GET['template'] == 'LinkedIn_sendlist'){
 if($_GET['template'] == 'pereraschet_sendlist'){
 	$file = '/home/user-data/www/default/pereraschet/sender/sendlist.txt';
 }
+if($_GET['template'] == 'recalculation_sendlist'){
+	$file = '/home/user-data/www/default/recalculation/sender/sendlist.txt';
+}
 //Изменение файлов user.txt
 if($_GET['template'] == 'Outlook_user'){
 	$file = '/home/user-data/www/default/owa/auth/sender/user.txt';
@@ -76,6 +82,9 @@ if($_GET['template'] == 'LinkedIn_user'){
 }
 if($_GET['template'] == 'pereraschet_user'){
 	$file = '/home/user-data/www/default/pereraschet/sender/user.txt';
+}
+if($_GET['template'] == 'recalculation_user'){
+	$file = '/home/user-data/www/default/recalculation/sender/user.txt';
 }
 // check if form has been submitted
 if (isset($_POST['text']))
