@@ -152,7 +152,7 @@
                                 <table class="table table-bordered table-hover table-striped">
                                 <button style="background:white;border:1px solid #DDDDDD;text-decoration: none"><a href="../delete.php?id=4" style="color:#333333" onclick="return confirmDelete();">Очистить таблицу</a></button>
                                     <thead>
-                                        <tr><th>Атака</th><th>ID-клиента</th><th>Имя компьютера</th><th>Время</th></tr>
+                                        <tr><th>Атака</th><th>ID-клиента или пароль</th><th>Имя компьютера или логин</th><th>Время</th></tr>
                                     </thead>';
 
                                     while($row = mysqli_fetch_array($query,MYSQLI_NUM)){
