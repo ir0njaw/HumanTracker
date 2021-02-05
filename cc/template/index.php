@@ -169,12 +169,12 @@
                                     <img  src='$logotip' height='180px' width='180px' />
                                 </a>
                                 <form action='unzip.php' method='post'>
-                                <input type='hidden' name='set_dir' value='/home/user-data/www/default/'>
+                                <input type='hidden' name='set_dir' value='/home/user-data/www/default'>
                                 <input type='hidden' name='file' value='$file'>
                                 <input type='hidden' name='title' value='$title'>
                                 <button class='btn btn-default' style='height:44px;padding:10px 10px 10px 10px;color:#555' type='submit'>Развернуть шаблон</button></form>
                             </li>";
-                        if($title == 'Проверка пароля' OR $title == 'Outlook' OR $title == 'Kerio'){  
+                        if($title == 'Проверка пароля' OR $title == 'Outlook' OR $title == 'Kerio' OR $title == 'Jira'){  
                       echo "
                              $content";
                       }
@@ -201,7 +201,7 @@
                                     <img class='img_hta' src='$logotip' height='180px' width='180px' />
                                 </a>
                                 <form action='unzip.php' method='post'>
-                                <input type='hidden' name='set_dir' value='/home/user-data/www/default/'>
+                                <input type='hidden' name='set_dir' value='/home/user-data/www/default'>
                                 <input type='hidden' name='file' value='$file'>
                                 <input type='hidden' name='title' value='$title'>
                                 <button class='btn btn-default' style='height:44px;padding:10px 10px 10px 10px;color:#555' type='submit'>Развернуть шаблон</button></form>
@@ -232,7 +232,7 @@
                                     <img class='img_usb' src='$logotip' height='180px' width='180px' />
                                 </a>
                                 <form action='unzip.php' method='post'>
-                                <input type='hidden' name='set_dir' value='/home/user-data/www/default/'>
+                                <input type='hidden' name='set_dir' value='/home/user-data/www/default'>
                                 <input type='hidden' name='file' value='$file'>
                                 <input type='hidden' name='title' value='$title'>
                                 <button class='btn btn-default' style='height:44px;padding:10px 10px 10px 10px;color:#555' type='submit'>Развернуть шаблон</button></form>
@@ -263,7 +263,7 @@
                                     <img src='$logotip' height='180px' width='180px' />
                                 </a>
                                 <form action='unzip.php' method='post'>
-                                <input type='hidden' name='set_dir' value='/home/user-data/www/default/'>
+                                <input type='hidden' name='set_dir' value='/home/user-data/www/default'>
                                 <input type='hidden' name='file' value='$file'>
                                 <input type='hidden' name='title' value='$title'>
                                 <button class='btn btn-default' style='height:44px;padding:10px 10px 10px 10px;color:#555' type='submit'>Развернуть шаблон</button></form>
