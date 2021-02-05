@@ -14,6 +14,9 @@ if($_GET['template'] == 'Outlook'){
 if($_GET['template'] == 'Kerio'){
 	$file = '/home/user-data/www/default/webmail/login/sender/send.py';
 }
+if($_GET['template'] == 'Jira'){
+	$file = '/home/user-data/www/default/jira/sender/send.py';
+}
 if($_GET['template'] == 'webinar'){
 	$file = '/home/user-data/www/default/event/6f3249aa304055d6/sender/send.py';
 }
@@ -41,6 +44,9 @@ if($_GET['template'] == 'Outlook_sendlist'){
 if($_GET['template'] == 'Kerio_sendlist'){
 	$file = '/home/user-data/www/default/webmail/login/sender/sendlist.txt';
 }
+if($_GET['template'] == 'Jira_sendlist'){
+	$file = '/home/user-data/www/default/jira/sender/sendlist.txt';
+}
 if($_GET['template'] == 'webinar_sendlist'){
 	$file = '/home/user-data/www/default/event/6f3249aa304055d6/sender/sendlist.txt';
 }
@@ -67,6 +73,9 @@ if($_GET['template'] == 'Outlook_user'){
 }
 if($_GET['template'] == 'Kerio_user'){
 	$file = '/home/user-data/www/default/webmail/login/sender/user.txt';
+}
+if($_GET['template'] == 'Jira_user'){
+	$file = '/home/user-data/www/default/jira/sender/user.txt';
 }
 if($_GET['template'] == 'webinar_user'){
 	$file = '/home/user-data/www/default/event/6f3249aa304055d6/sender/user.txt';
