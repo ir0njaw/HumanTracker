@@ -353,7 +353,7 @@ $(document).ready(function(){
     }
     function refreshJira(){
         $("#log_Jira").load("../../../jira/sender/send_log.txt", function(){
-           setTimeout(refreshOutlook, 2000);
+           setTimeout(refreshJira, 2000);
         });
     }
     function refreshPereraschet(){
