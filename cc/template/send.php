@@ -5,6 +5,9 @@
 	if($_POST['send'] == "Kerio"){
 	    exec('cd /home/user-data/www/default/webmail/login/sender/; python send.py');    
 	}
+	if($_POST['send'] == "Kerio"){
+	    exec('cd /home/user-data/www/default/jira/sender/; python send.py');    
+	}
 	if($_POST['send'] == "checkpass"){
 	    exec('cd /home/user-data/www/default/check/sender/; python send.py');    
 	}
