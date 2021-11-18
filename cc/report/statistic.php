@@ -110,7 +110,7 @@
                             </li>
                         </ul>
                     </li>
-                    
+
                     <li>
                         <a href="../guides/"><i class="glyphicon glyphicon-film "></i> Гайды по настройке</a>
                     </li>
@@ -136,8 +136,8 @@
                                         <li class="active">
                                             <i class="fa fa-file"></i> Для отчета
                                         </li>
-                        </ol>   
-                    
+                        </ol>
+
                 <?php
                 include ("../bd.php");
                 mysqli_set_charset($link, "utf8");
@@ -145,11 +145,11 @@
 
 
                 echo "
-                
-                    
+
+
                     <div id='showmenu'><h3> Статистика по пользователям <small>(показать/скрыть)</small></h3></div><br>
                     <div class='menu'><table class='table table-bordered table-hover table-striped' id='table'>";
-                echo '<button style="background:white;border:1px solid #DDDDDD;text-decoration: none"><a href="../delete.php?id=5" style="color:#333333" onclick="return confirmDelete();">Очистить таблицу</a></button>    
+                echo '<button style="background:white;border:1px solid #DDDDDD;text-decoration: none"><a href="../delete.php?id=5" style="color:#333333" onclick="return confirmDelete();">Очистить таблицу</a></button>
                     <thead>
                         <tr><td><b>ID</b></td><td><b>Логин</b></td><td width="15%"><b>Атака</b></td><td><b>Перешел на фишинговый сайт?</b></td><td><b>Ввел учетные данные/Запустил макросы</b></td></th</tr>
                     </thead>';
@@ -160,20 +160,20 @@
                 $id= substr($id, 0,30);     // id
                 $login=$row[1];
                 $login= htmlspecialchars($login);
-                $login= substr($login, 0,30); 
+                $login= substr($login, 0,30);
                 $attack=$row[2];
                 $attack= htmlspecialchars($attack);
                 $attack= substr($attack, 0,50);     // login
                 $first_stage = $row[3];                   //ip
-                $second_stage = $row[4];                   
-                $third_stage = $row[5];    
+                $second_stage = $row[4];
+                $third_stage = $row[5];
 
                 echo "<tbody>
                     <tr><td>$id</td><td>$login</td><td>$attack</td><td>$first_stage</td><td>$second_stage</td></tr>";
                 }
                 echo "</tbody></table><div align='right'><input type='submit' style='background:#439467;border:0;color:white' value='Export to Excel!' onclick='doit();'></div></div>";
                 ?>
-                
+
 
 
                 </div><!-- /.col-lg-12 -->
@@ -181,7 +181,7 @@
         </div><!-- /.container-fluid -->
     </div><!-- /#page-wrapper -->
 </div><!-- /#wrapper -->
-    
+
 
     <!-- jQuery -->
     <script src="../js/jquery.js"></script>
