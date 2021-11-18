@@ -21,7 +21,7 @@
     <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!--Galery -->
-   
+
     <link rel="stylesheet" type="text/css" href="../css/component.css" />
     <script src="../js/modernizr.custom.js"></script>
     <!--/Galery -->
@@ -136,11 +136,11 @@
                                 <i class="fa fa-flag"></i> USB</a>
                             </li>
                         </ol>
-         
+
                     </div> <!--/top -->
                     </div>
                     <div class="row">
-                
+
  <!-- Таблица -->     <div class="col-lg-12">
 
                         <div class="table-responsive">
@@ -163,7 +163,7 @@
                           $preview = $dir.$img;
                           $file = $dir.$zip;
                           $title = str_replace("/", "", $dir);
-                          
+
                         $content = "<li>$title
                                 <a href='$file' data-largesrc='$preview' data-title='$title' data-description='$description'>
                                     <img  src='$logotip' height='180px' width='180px' />
@@ -174,11 +174,12 @@
                                 <input type='hidden' name='title' value='$title'>
                                 <button class='btn btn-default' style='height:44px;padding:10px 10px 10px 10px;color:#555' type='submit'>Развернуть шаблон</button></form>
                             </li>";
-                        if($title == 'Проверка пароля' OR $title == 'Outlook' OR $title == 'Kerio' OR $title == 'Jira'){  
+                        if($title == 'Проверка пароля' OR $title == 'Outlook' OR $title == 'Kerio' OR $title == 'Jira'){
+
                       echo "
                              $content";
                       }
-                      
+
                   }
 
                  echo "<h2 align='left' style='margin-top:-40px'>HTA</h2> ";
@@ -206,14 +207,14 @@
                                 <input type='hidden' name='title' value='$title'>
                                 <button class='btn btn-default' style='height:44px;padding:10px 10px 10px 10px;color:#555' type='submit'>Развернуть шаблон</button></form>
                             </li>";
-                           if($title == 'Вебинар' ){  
+                           if($title == 'Вебинар' ){
                       echo "
                              $content";
                       }
-                      
+
                   }
                  echo "<h2 align='left' style='margin-top:-40px'>USB и вредоносные exe</h2> ";
-                        
+
                  $query = mysqli_query($link,"SELECT * FROM template");
 
                       while($row = mysqli_fetch_array($query,MYSQLI_NUM)){
@@ -237,11 +238,12 @@
                                 <input type='hidden' name='title' value='$title'>
                                 <button class='btn btn-default' style='height:44px;padding:10px 10px 10px 10px;color:#555' type='submit'>Развернуть шаблон</button></form>
                             </li>";
-                           if($title == 'Обновление VPN' OR $title == 'Установка антивируса' OR $title == 'LinkedIn' ){  
+                           if($title == 'Обновление VPN' OR $title == 'Установка антивируса' OR $title == 'LinkedIn' ){
+
                       echo "
                              $content";
                       }
-                      
+
                   }
                   echo "<h2 align='left' style='margin-top:-40px'>Макросы</h2> ";
 
@@ -270,14 +272,14 @@
                             </li>
                             ";
 
-                           if($title == 'Перерасчет ЗП' OR $title == 'Премия' OR $title == 'Перерасчет ЗП (фишинг)'){  
+                           if($title == 'Перерасчет ЗП' OR $title == 'Премия' OR $title == 'Перерасчет ЗП (фишинг)'){
                       echo "
                              $content";
                       }
-                      
+
                   }
                   echo "</ul>";
-                    ?>     
+                    ?>
                         </div>
 <!-- /Таблица -->       </div>
                     </div>
@@ -302,7 +304,7 @@
                 Grid.init();
             });
 </script>
-    
+
 <script type="text/javascript">
 $(document).ready(function(){
         $("img").click(function() {
