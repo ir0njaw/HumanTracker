@@ -1,4 +1,5 @@
 <?php
+
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
@@ -136,11 +137,11 @@ header("Pragma: no-cache");
                                 <i class="fa fa-flag"></i> Развернутые шаблоны</a>
                             </li>
                         </ol>
-         
+
                     </div> <!--/top -->
                 </div>
                     <div class="row">
-                
+
  <!-- Таблица -->     <div class="col-lg-12">
 
                         <div class="table-responsive">
@@ -268,18 +269,18 @@ header("Pragma: no-cache");
                     $attack_name = $row[0];
                     $dir = $row[1];
                     echo '<div class="col-lg-1 text-center" style="border:1px solid #ccc;width:400px;margin:0 30px 30px 0;padding:30px ">';
-                    
-                    if($attack_name == "Kerio"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/webmail/login/index.php' target='_blank''>Перейти к шаблону $attack_name</a></p>";}
-                    if($attack_name == "Outlook"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/owa' target='_blank'>$attack_name</a></p>";}
-                    if($attack_name == "Jira"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/jira' target='_blank'>$attack_name</a></p>";}
-                    if($attack_name == "Проверка пароля"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/check/' target='_blank'>$attack_name</a></p>";$attack_name = "checkpass";}
-                    if($attack_name == "Вебинар"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/event/' target='_blank'>$attack_name</a></p>";$attack_name = "webinar";}
-                    if($attack_name == "Обновление VPN"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/openvpn/' target='_blank'>$attack_name</a></p>";;$attack_name = "vpn";}
-                    if($attack_name == "LinkedIn"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/vacancy/' target='_blank'>$attack_name</a></p>";$attack_name = "LinkedIn";}
-                    if($attack_name == "Установка антивируса"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/avast/' target='_blank'>$attack_name</a></p>";$attack_name = "antivirus";}
-                    if($attack_name == "Перерасчет ЗП"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/pereraschet/' target='_blank'>$attack_name</a></p>";$attack_name = "pereraschet";}
-                    if($attack_name == "Перерасчет ЗП (фишинг)"){echo "<p><a href='https://$_SERVER[HTTP_HOST]/recalculation/' target='_blank'>$attack_name</a></p>";$attack_name = "recalculation";}
-                    echo ' 
+
+                    if($attack_name == "Kerio"){echo "<p><a href=//$_SERVER[HTTP_HOST]/webmail/login/index.php target='_blank'>Перейти к шаблону $attack_name</a></p>";}
+                    if($attack_name == "Outlook"){echo "<p><a href=//$_SERVER[HTTP_HOST]/owa target='_blank'>$attack_name</a></p>";}
+                    if($attack_name == "Jira"){echo "<p><a href=//$_SERVER[HTTP_HOST]//jira target='_blank'>$attack_name</a></p>";}
+                    if($attack_name == "Проверка пароля"){echo "<p><a href='//$_SERVER[HTTP_HOST]/check/ target='_blank'>$attack_name</a></p>";$attack_name = "checkpass";}
+                    if($attack_name == "Вебинар"){echo "<p><a href=//$_SERVER[HTTP_HOST]/event/ target='_blank'>$attack_name</a></p>";$attack_name = "webinar";}
+                    if($attack_name == "Обновление VPN"){echo "<p><a href=//$_SERVER[HTTP_HOST]/openvpn/ target='_blank'>$attack_name</a></p>";;$attack_name = "vpn";}
+                    if($attack_name == "LinkedIn"){echo "<p><a href=//$_SERVER[HTTP_HOST]/vacancy/ target='_blank'>$attack_name</a></p>";$attack_name = "LinkedIn";}
+                    if($attack_name == "Установка антивируса"){echo "<p><a href=//$_SERVER[HTTP_HOST]/avast/ target='_blank'>$attack_name</a></p>";$attack_name = "antivirus";}
+                    if($attack_name == "Перерасчет ЗП"){echo "<p><a href=//$_SERVER[HTTP_HOST]/pereraschet/ target='_blank'>$attack_name</a></p>";$attack_name = "pereraschet";}
+                    if($attack_name == "Перерасчет ЗП (фишинг)"){echo "<p><a href=//$_SERVER[HTTP_HOST]/recalculation/ target='_blank'>$attack_name</a></p>";$attack_name = "recalculation";}
+                    echo '
                             <a href="edit.php?template='.$attack_name.'_sendlist"><button class="btn btn-default">sendlist.txt</button></a>
                             <a href="edit.php?template='.$attack_name.'_user"><button class="btn btn-default">user.txt</button></a><br>
                             <a href="edit.php?template='.$attack_name.'"><button class="btn btn-default">Изменить письмо</button></a><br>
@@ -291,12 +292,12 @@ header("Pragma: no-cache");
                             <br>
                             <form action="deployed.php" method="POST">
                                     <input class="btn btn-default" type="submit" id="submit-btn" name="delete" value="Удалить">
-                                    <input type="hidden" name="attack" value="'.$attack_name.'"> 
+                                    <input type="hidden" name="attack" value="'.$attack_name.'">
                                 </form>
-                           </div>                          
+                           </div>
                         ';
                 }
-                   
+
 
             ?>
                         </div>
@@ -325,7 +326,7 @@ header("Pragma: no-cache");
         $.ajax({
             type: "POST",
             url: "send.php",
-            data: { 
+            data: {
                 send: $(this).val()
             },
         });
