@@ -10,6 +10,9 @@ sudo apt-get install -y powershell
 apt-get -y install build-essential libssl-dev libffi-dev python3-dev
 apt-get -y install python-dev python-setuptools
 apt-get -y install python-pip
+apt-get -y install wget
+wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
+python2 get-pip.py
 pip2 install openpyxl
 pip2 install pillow
 
